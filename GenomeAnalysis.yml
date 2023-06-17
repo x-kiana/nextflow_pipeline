@@ -1,0 +1,10 @@
+name: GenomeAnalysis
+channels:
+ - bioconda
+dependencies:
+- bwa
+- samtools
+- htslib
+- picard
+prefix: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/StudentSpaces/KianaRashidi/nextflow_pipeline  
+
