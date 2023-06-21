@@ -9,12 +9,13 @@ process SORTEDBAM{
 
    input:
    path x
+   val sampleID
 
    output:
-   path "${params.sampleID}.sorted.bam"
+   path "${sampleID}.sorted.bam"
 
    """
-   samtools sort $x -o ${params.sampleID}.sorted.bam
+   samtools sort $x -o ${sampleID}.sorted.bam
    """
 }
 

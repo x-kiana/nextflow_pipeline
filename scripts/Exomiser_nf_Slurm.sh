@@ -12,4 +12,4 @@
 
 module load singularity
 Nextflow=/mnt/common/Precision/NextFlow/June2023/nextflow
-$Nextflow run exomiser.nf
+$Nextflow run modules/exomiser.nf

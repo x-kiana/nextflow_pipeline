@@ -7,13 +7,13 @@
 
 process FASTQTOSAM{
     input:
-    path x
-    path y
+    tuple path(x), path(y), val(sampleID)
+    //each mode
 
     output:
-    path "${params.sampleID}.sam"
+    path "${sampleID}.sam"
 
     """
-    bwa mem ${params.refgenome} $x $y > ${params.sampleID}.sam
+    bwa mem ${params.refgenome} $x $y > ${sampleID}.sam
     """
 }

@@ -8,12 +8,13 @@
 process SAMTOBAM{
    input:
    path x
+   val sampleID
 
    output:
-   path "${params.sampleID}.bam"
+   path "${sampleID}.bam" 
 
    """
-   samtools view $x -o ${params.sampleID}.bam
+   samtools view $x -o ${sampleID}.bam
    """
 }
 

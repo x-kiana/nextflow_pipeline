@@ -10,16 +10,21 @@
 process DEEPVARIANT{
     input:
     path x
+    val sampleID
     
+    output:
+    path "${sampleID}_DeepVariant.vcf.gz"
+    path "${sampleID}_DeepVariant.gvcf.gz", emit: gvcf 
+
     script:
     """
     /opt/deepvariant/bin/run_deepvariant \
       --intermediate_results_dir="${params.wd}/intermediate_results_dir" \
     --model_type=WGS \
     --ref="${params.refgenome}" \
-    --reads="${params.wd}/results/${params.sampleID}.sorted.bam" \
-    --output_vcf="${params.wd}/${params.sampleID}_DeepVariant.vcf.gz" \
-    --regions "${params.regions}" \
+    --reads="${params.wd}/results/${sampleID}.sorted.bam" \
+    --output_vcf="${sampleID}_DeepVariant.vcf.gz" \
+    --output_gvcf="${sampleID}_DeepVariant.gvcf.gz" \
     --num_shards="${task.cpus}"
     """
 }

@@ -8,10 +8,11 @@
 process INDEXEDBAM{
 
    input:
-   path x
+   path x 
+   val sampleID
 
    output:
-   path "${params.sampleID}.sorted.bam.bai"
+   path "${sampleID}.sorted.bam.bai" 
 
    """
    samtools index $x

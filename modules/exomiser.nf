@@ -8,14 +8,11 @@
 process EXOMISER{
     input:
     path x
+    path y
 
     """
     ${params.java} -Xmx4g -jar -Djava.io.tmpdir=$PWD ${params.exomiserDir}/${params.exomiser} \
         --analysis $x \
         --spring.config.location=${params.exomiserDir} 
     """
-}
-
-workflow {
-    results_ch = EXOMISER(params.config)
 }

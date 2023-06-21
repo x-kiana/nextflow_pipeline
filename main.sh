@@ -13,4 +13,4 @@
 source /home/BCRICWH.LAN/kiana.rashidi/miniconda3/etc/profile.d/conda.sh 
 module load singularity
 Nextflow=/mnt/common/Precision/NextFlow/June2023/nextflow
-$Nextflow run main.nf
+$Nextflow run main.nf -resume

@@ -1,12 +1,16 @@
 #!/usr/bin/env nextflow
 
-include { FASTQTOSAM } from "./fastq_to_sam.nf"
-include { SAMTOBAM } from "./sam_to_bam.nf"
-include { SORTEDBAM } from "./sorted_bam.nf"
-include { INDEXEDBAM } from "./indexed_bam.nf"
-include { DEEPVARIANT } from "./DeepVariant_Proband.nf"
+include { PROBAND } from "./subworkflows/proband.nf"
+include { MOTHER } from "./subworkflows/mother.nf"
+include { FATHER } from "./subworkflows/father.nf"
+include { GLNEXUS } from "./modules/glnexus.nf"
+include { EXOMISER } from "./modules/exomiser.nf"
 
 workflow {
-    DEEPVARIANT(INDEXEDBAM(SORTEDBAM(SAMTOBAM(FASTQTOSAM(channel.fromPath(params.r1), channel.fromPath(params.r2))))))
+    PROBAND()
+    MOTHER()
+    FATHER()
+    GLNEXUS(PROBAND.out.proband_deepvariant, MOTHER.out.mother_deepvariant, FATHER.out.father_deepvariant, params.familyID) 
+    EXOMISER(GLNEXUS.out, params.exomiserConfig)
 }
 

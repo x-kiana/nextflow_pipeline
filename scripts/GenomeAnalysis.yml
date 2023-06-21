@@ -6,5 +6,5 @@ dependencies:
 - samtools
 - htslib
 - picard
-prefix: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/StudentSpaces/KianaRashidi/nextflow_pipeline  
+prefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/scripts
 
