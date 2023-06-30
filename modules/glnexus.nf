@@ -13,16 +13,14 @@ process GLNEXUS {
     val familyID
 
     output:
-    path "${familyID}.merged.vcf.gz"
+    path "${familyID}.glnexus.merged.bcf"
     
     script:
     """
-    /mnt/common/Precision/GLNexus/glnexus_cli -c DeepVariantWGS \
+    /mnt/common/Precision/GLNexus/glnexus_cli -c DeepVariant_unfiltered \
         --threads ${task.cpus} \
-        *gvcf.gz \
+        $x $y $z \
         > ${familyID}.glnexus.merged.bcf
-
-    bcftools view ${familyID}.glnexus.merged.bcf | bgzip -c > ${familyID}.merged.vcf.gz
     """
 }
 

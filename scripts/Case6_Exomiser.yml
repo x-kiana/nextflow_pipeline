@@ -1,13 +1,14 @@
 ## Exomiser Analysis Template.
 # These are all the possible options for running exomiser. Use this as a template for
 # your own set-up.
+# add to exomiser.nf as flags
 ---
 analysis:
     # hg19 or hg38 - ensure that the application has been configured to run the specified assembly otherwise it will halt.
     genomeAssembly: hg38
-    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/Case6_Merged.vcf.gz
+    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/family_nf.merged.vcf.gz
     ped: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6.ped
-    proband: proband
+    proband: proband_nf
     hpoIds: ['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
     # These are the default settings, with values representing the maximum minor allele frequency in percent (%) permitted for an
     # allele to be considered as a causative candidate under that mode of inheritance.
@@ -61,7 +62,7 @@ analysis:
 
         GNOMAD_E_AFR,
         GNOMAD_E_AMR,
-#        GNOMAD_E_ASJ,
+        GNOMAD_E_ASJ,
         GNOMAD_E_EAS,
         GNOMAD_E_FIN,
         GNOMAD_E_NFE,
@@ -70,7 +71,7 @@ analysis:
 
         GNOMAD_G_AFR,
         GNOMAD_G_AMR,
-#        GNOMAD_G_ASJ,
+        GNOMAD_G_ASJ,
         GNOMAD_G_EAS,
         GNOMAD_G_FIN,
         GNOMAD_G_NFE,
@@ -126,6 +127,7 @@ analysis:
         #phenixPrioritiser: {}
         #exomeWalkerPrioritiser: {seedGeneIds: [11111, 22222, 33333]}
     ]
+#change to family id instead
 outputOptions:
     outputContributingVariantsOnly: false
     #numGenes options: 0 = all or specify a limit e.g. 500 for the first 500 results  

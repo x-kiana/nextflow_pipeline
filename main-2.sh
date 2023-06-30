@@ -2,7 +2,7 @@
 
 #SBATCH --partition=defq
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=1
+#SBATCH --ntasks-per-node=1
 #SBATCH --mem=4G
 #SBATCH --mail-user=kiana.rashidi@bcchr.ca
 #SBATCH --mail-type=ALL
@@ -13,4 +13,4 @@
 source /home/BCRICWH.LAN/kiana.rashidi/miniconda3/etc/profile.d/conda.sh 
 module load singularity
 Nextflow=/mnt/common/Precision/NextFlow/June2023/nextflow
-$Nextflow run main.nf -profile gpcc -resume
+$Nextflow run main.nf --probandID 'Proband_nf_2' --motherID 'Mother_nf_2' --fatherID 'Father_nf_2' --familyID 'Family_nf_2' -profile gpcc

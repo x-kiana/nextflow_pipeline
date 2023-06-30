@@ -4,7 +4,7 @@
  * @input: the exomiser config (*.yml) file
  * @output: no direct output
  */
- 
+// add --ped, --vcf 
 process EXOMISER{
     input:
     path x

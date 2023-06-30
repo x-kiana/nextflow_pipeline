@@ -19,13 +19,14 @@ process DEEPVARIANT{
     script:
     """
     /opt/deepvariant/bin/run_deepvariant \
-      --intermediate_results_dir="${params.wd}/intermediate_results_dir" \
+      --intermediate_results_dir="${params.wd}/intermediate_results_dir/${sampleID}" \
     --model_type=WGS \
     --ref="${params.refgenome}" \
     --reads="${params.wd}/results/${sampleID}.sorted.bam" \
     --output_vcf="${sampleID}_DeepVariant.vcf.gz" \
     --output_gvcf="${sampleID}_DeepVariant.gvcf.gz" \
-    --num_shards="${task.cpus}"
+    --num_shards="${task.cpus}" \
+    --sample_name="${sampleID}"
     """
 }
 

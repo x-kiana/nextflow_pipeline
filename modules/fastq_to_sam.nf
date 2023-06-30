@@ -14,6 +14,6 @@ process FASTQTOSAM{
     path "${sampleID}.sam"
 
     """
-    bwa mem ${params.refgenome} $x $y > ${sampleID}.sam
+    bwa mem -t $task.cpus ${params.refgenome} $x $y > ${sampleID}.sam
     """
 }
