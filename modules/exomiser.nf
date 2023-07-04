@@ -2,6 +2,7 @@
 
 /* script to run the exomiser tool, requires PED & DeepVariant
  * @input: the exomiser config (*.yml) file
+ * @input: the merged family vcf file from the glnexus
  * @output: no direct output
  */
 // add --ped, --vcf 

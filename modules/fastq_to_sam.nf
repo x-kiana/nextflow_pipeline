@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 
 /* process to map reads using bwa mem
- * @input: paired-end read *.fastq files
+ * @input: paired-end read *.fastq files, sampleID
  * @output: .sam file for the given sample
  */
 

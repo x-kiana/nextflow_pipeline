@@ -2,6 +2,7 @@
 
 /* compile the sample sam into the binary bam file
  * @input: sample *.sam file
+ * @input: sampleID
  * @output: sample bam file
  */
 

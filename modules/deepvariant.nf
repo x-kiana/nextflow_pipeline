@@ -1,10 +1,13 @@
 #!/usr/bin/env nextflow
 
 /* process to run the DeepVariant tool through a singularity container
- * @input: takes the result of the samtools indexing process as input
+ * use --regions to specify a certain region
+ * @input: result of the samtools indexing process
            the input is a measure to make sure the files needed by the
            process are created before the process is run
- * @output: no direct output, instead specified by the --output_vcf tag
+ * @input: sample ID
+ * @output: the sample vcf
+ * @output: the sample gvcf
  */
 
 process DEEPVARIANT{

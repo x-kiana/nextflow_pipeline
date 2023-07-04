@@ -1,8 +1,9 @@
 #!/usr/bin/env nextflow
 
-/* 
- * @input: 
- * @output: 
+/* Process to turn merged bcf file into a merged vcf
+ * @input: merged family bcf file
+ * @input: familyID
+ * @output: merged family vcf file
  */
 
 process GLNEXUS2 {

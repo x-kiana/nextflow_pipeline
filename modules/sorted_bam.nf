@@ -2,6 +2,7 @@
 
 /* sort the bam file
  * @input: sample bam file
+ * @input: sampleID
  * @output: sample sorted bam file
  */
 

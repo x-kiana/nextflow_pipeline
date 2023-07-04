@@ -1,8 +1,11 @@
 #!/usr/bin/env nextflow
 
-/* 
- * @input: 
- * @output: 
+/* GLnexus process to create merged family bcf file 
+ * @input: Mother gvcf
+ * @input: Father gvcf
+ * @input: Proband gvcf
+ * @input: familyID
+ * @output: merged family bcf
  */
 
 process GLNEXUS {
