@@ -16,6 +16,7 @@ process SAMTOBAM{
 
    """
    samtools view $x -o ${sampleID}.bam
+   #add rm $x after adding condition to check for bam 
    """
 }
 

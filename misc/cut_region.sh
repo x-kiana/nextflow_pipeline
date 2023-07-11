@@ -38,7 +38,7 @@ OUTBAM=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/
 OUTBAM_SORTED=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/father_test.namesorted.bam
 OUTFQ1=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/father_r1.fastq
 OUTFQ2=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/father_r2.fastq
-INBAM=/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/StudentSpaces/KianaRashidi/ProblemSets/ProblemSet4/CaseAnalysis/Case6_father.sorted.bam
+INBAM=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/cb/642d6ffa9e8d4c0e19409dfda11da3/father_nf.sorted.bam
 REGION=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/misc/case6_chrX.bed
 
 # Samtools extract subregion
@@ -55,7 +55,8 @@ samtools fastq \
 	-0 /dev/null \
 	-s /dev/null \
 	-n $OUTBAM_SORTED
-
+bgzip $OUTFQ1
+bgzip $OUTFQ2
 #########################3
 
 # Mom
@@ -63,7 +64,7 @@ OUTBAM=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/
 OUTBAM_SORTED=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/mother_test.namesorted.bam
 OUTFQ1=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/mother_r1.fastq
 OUTFQ2=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/mother_r2.fastq
-INBAM=/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/StudentSpaces/KianaRashidi/ProblemSets/ProblemSet4/CaseAnalysis/Case6_mother.sorted.bam
+INBAM=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/mother_nf.sorted.bam
 
 # Samtools extract subregion
 samtools view -L $REGION $INBAM -b -o $OUTBAM
@@ -80,6 +81,8 @@ samtools fastq \
         -s /dev/null \
         -n $OUTBAM_SORTED
 
+bgzip $OUTFQ1
+bgzip $OUTFQ2
 ######################
 
 # Proband 
@@ -87,7 +90,7 @@ OUTBAM=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/
 OUTBAM_SORTED=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/proband_test.namesorted.bam
 OUTFQ1=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/proband_r1.fastq
 OUTFQ2=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/proband_r2.fastq
-INBAM=/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/StudentSpaces/KianaRashidi/ProblemSets/ProblemSet4/CaseAnalysis/Case6_proband.sorted.bam
+INBAM=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/proband_nf.sorted.bam
 
 # Samtools extract subregion
 samtools view -L $REGION $INBAM -b -o $OUTBAM
@@ -103,3 +106,5 @@ samtools fastq \
         -0 /dev/null \
         -s /dev/null \
         -n $OUTBAM_SORTED
+bgzip $OUTFQ1
+bgzip $OUTFQ2

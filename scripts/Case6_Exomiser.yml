@@ -136,7 +136,8 @@ outputOptions:
     # according to the outputFormats option. If unspecified this will default to the following: 
     # {exomiserDir}/results/input-vcf-name-exomiser-results.html
     # alternatively, specify a fully qualifed path only. e.g. /users/jules/exomes/analysis    
-    outputPrefix: Case6_exomiser
+    outputPrefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/exomiser
+    outputDirectory: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/
     #out-format options: HTML, JSON, TSV_GENE, TSV_VARIANT, VCF (default: HTML)
     outputFormats: [HTML, JSON, TSV_GENE, TSV_VARIANT, VCF]
 

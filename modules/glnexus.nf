@@ -20,6 +20,7 @@ process GLNEXUS {
     
     script:
     """
+#can add WGS/WES/unfiltered - fine for now
     /mnt/common/Precision/GLNexus/glnexus_cli -c DeepVariant_unfiltered \
         --threads ${task.cpus} \
         $x $y $z \

@@ -8,6 +8,7 @@
  * @input: sample ID
  * @output: the sample vcf
  * @output: the sample gvcf
+ * add WGS and WES to params
  */
 
 process DEEPVARIANT{
@@ -29,6 +30,7 @@ process DEEPVARIANT{
     --output_vcf="${sampleID}_DeepVariant.vcf.gz" \
     --output_gvcf="${sampleID}_DeepVariant.gvcf.gz" \
     --num_shards="${task.cpus}" \
+    --regions "${params.region}" \
     --sample_name="${sampleID}"
     """
 }
