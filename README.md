@@ -11,7 +11,7 @@ The process flow consists of the following:
 * Variant annotation
   * run exomiser on the result from GLnexus & using a pre-written PED file in the config (soon to be changed to create the PED file in the process)
 
-##Running on Test Data
+## Running on Test Data
 Sample paired-end fastq files for father, mother, and proband are included in the example_data directory. You can use these to test your installation of the pipeline and tools. These files were created using various samtools command, using a script that can be found at misc/cut_region.sh.
 
 To run the pipeline using the test files, follow the following steps:
