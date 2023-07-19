@@ -13,5 +13,5 @@
 source /home/BCRICWH.LAN/kiana.rashidi/miniconda3/etc/profile.d/conda.sh 
 module load singularity
 Nextflow=/mnt/common/Precision/NextFlow/June2023/nextflow
-$Nextflow run main.nf -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart_test.png -profile gpccTest
+$Nextflow run main-test-updated.nf -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart_test.png -profile gpcc
 #add work (-w) for separate processes

@@ -6,13 +6,16 @@ include { SORTEDBAM } from "../modules/sorted_bam.nf"
 include { INDEXEDBAM } from "../modules/indexed_bam.nf"
 include { DEEPVARIANT } from "../modules/deepvariant.nf"
 
-workflow PROBAND {
-    FASTQTOSAM(tuple params.probandR1, params.probandR2, params.probandID)
-    SAMTOBAM(FASTQTOSAM.out, params.probandID)
-    SORTEDBAM(SAMTOBAM.out, params.probandID)
-    INDEXEDBAM(SORTEDBAM.out, params.probandID)
-    DEEPVARIANT(INDEXEDBAM.out, params.probandID)
+workflow SINGLE {
+    take:
+    sample_matrix
+    main:
+    FASTQTOSAM(tuple sample_matrix.getAt([2]), sample_matrix.getAt([3]), sample_matrix.getAt([1]), sample_matrix.getAt([0]))
+    SAMTOBAM(FASTQTOSAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
+    SORTEDBAM(SAMTOBAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
+    INDEXEDBAM(SORTEDBAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
+    DEEPVARIANT(INDEXEDBAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
     emit: 
-    proband_deepvariant = DEEPVARIANT.out.gvcf
+    deepvariant = DEEPVARIANT.out.gvcf
 }
 

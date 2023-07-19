@@ -7,11 +7,17 @@ include { INDEXEDBAM } from "../modules/indexed_bam.nf"
 include { DEEPVARIANT } from "../modules/deepvariant.nf"
 
 workflow MOTHER {
-    FASTQTOSAM(tuple params.motherR1, params.motherR2, params.motherID)
-    SAMTOBAM(FASTQTOSAM.out, params.motherID)
-    SORTEDBAM(SAMTOBAM.out, params.motherID)
-    INDEXEDBAM(SORTEDBAM.out, params.motherID)
-    DEEPVARIANT(INDEXEDBAM.out, params.motherID)
+    take:
+    fastq1
+    fastq2
+    sampleID
+    familyID
+    main:
+    FASTQTOSAM(tuple fastq1, fastq2, sampleID, familyID)
+    SAMTOBAM(FASTQTOSAM.out, sampleID, familyID)
+    SORTEDBAM(SAMTOBAM.out, sampleID, familyID)
+    INDEXEDBAM(SORTEDBAM.out, sampleID, familyID)
+    DEEPVARIANT(INDEXEDBAM.out, sampleID, familyID)
     emit:
     mother_deepvariant = DEEPVARIANT.out.gvcf
 }

@@ -1,0 +1,119 @@
+N E X T F L O W  ~  version 23.04.1
+Launching `main-test-updated.nf` [focused_ptolemy] DSL2 - revision: f37f26402a
+[-        ] process > PROBAND:FASTQTOSAM -
+[-        ] process > PROBAND:SAMTOBAM   -
+
+[-        ] process > PROBAND:FASTQTOSAM  -
+[-        ] process > PROBAND:SAMTOBAM    -
+[-        ] process > PROBAND:SORTEDBAM   -
+[-        ] process > PROBAND:INDEXEDBAM  -
+[-        ] process > PROBAND:DUPREMOVED  -
+[-        ] process > PROBAND:DEEPVARIANT -
+[-        ] process > MOTHER:FASTQTOSAM   -
+[-        ] process > MOTHER:SAMTOBAM     -
+[-        ] process > MOTHER:SORTEDBAM    -
+[-        ] process > MOTHER:INDEXEDBAM   -
+[-        ] process > MOTHER:DUPREMOVED   -
+[-        ] process > MOTHER:DEEPVARIANT  -
+[-        ] process > FATHER:FASTQTOSAM   -
+[-        ] process > FATHER:SAMTOBAM     -
+[-        ] process > FATHER:SORTEDBAM    -
+[-        ] process > FATHER:INDEXEDBAM   -
+[-        ] process > FATHER:DUPREMOVED   -
+[-        ] process > FATHER:DEEPVARIANT  -
+[-        ] process > GLNEXUS             -
+[-        ] process > GLNEXUS2            -
+[-        ] process > EXOMISER            -
+
+[4e/ce653a] process > PROBAND:FASTQTOSAM  [100%] 1 of 1, cached: 1 ✔
+[a5/d77749] process > PROBAND:SAMTOBAM    [100%] 1 of 1, cached: 1 ✔
+[f8/e8410a] process > PROBAND:SORTEDBAM   [100%] 1 of 1, cached: 1 ✔
+[51/c7a241] process > PROBAND:INDEXEDBAM  [100%] 1 of 1, cached: 1 ✔
+[-        ] process > PROBAND:DUPREMOVED  -
+[-        ] process > PROBAND:DEEPVARIANT -
+[c9/cb488a] process > MOTHER:FASTQTOSAM   [100%] 1 of 1, cached: 1 ✔
+[20/0c8b9f] process > MOTHER:SAMTOBAM     [100%] 1 of 1, cached: 1 ✔
+[a6/fd36d0] process > MOTHER:SORTEDBAM    [100%] 1 of 1, cached: 1 ✔
+[21/cda645] process > MOTHER:INDEXEDBAM   [100%] 1 of 1, cached: 1 ✔
+[-        ] process > MOTHER:DUPREMOVED   -
+[-        ] process > MOTHER:DEEPVARIANT  -
+[24/ab17ac] process > FATHER:FASTQTOSAM   [100%] 1 of 1, cached: 1 ✔
+[af/bd5220] process > FATHER:SAMTOBAM     [100%] 1 of 1, cached: 1 ✔
+[35/7fab62] process > FATHER:SORTEDBAM    [100%] 1 of 1, cached: 1 ✔
+[60/5582e9] process > FATHER:INDEXEDBAM   [100%] 1 of 1, cached: 1 ✔
+[-        ] process > FATHER:DUPREMOVED   -
+[-        ] process > FATHER:DEEPVARIANT  -
+[-        ] process > GLNEXUS             -
+[-        ] process > GLNEXUS2            -
+[-        ] process > EXOMISER            -
+ERROR ~ Error executing process > 'MOTHER:DUPREMOVED'
+
+Caused by:
+  No such variable: EBROOTPICARD -- Check script './subworkflows/../modules/dupremoved.nf' at line: 16
+
+Source block:
+  """
+      source /cm/shared/BCCHR-apps/env_vars/unset_BCM.sh
+      source /cvmfs/soft.computecanada.ca/config/profile/bash.sh
+      module load picard
+  #//load picard from container in file:///mnt/common/SILENT/Act3/singularity/gatk4-4.2.0.sif
+      ${params.java} -Xmx${task.memory} -jar $EBROOTPICARD/picard.jar MarkDuplicates \
+  	R=${params.refgenome} \
+  	I=$x \
+  	O=$y \
+  	REMOVE_DUPLICATES=false \
+  	M=${sampleID}.duplicateMetrics.txt
+      samtools index $sampleID.dupremoved.sorted.bam 
+      """
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+[d2/474070] Cached process > GLNEXUS
+WARN: Failed to render execution report -- see the log file for details
+
+[4e/ce653a] process > PROBAND:FASTQTOSAM  [100%] 1 of 1, cached: 1 ✔
+[a5/d77749] process > PROBAND:SAMTOBAM    [100%] 1 of 1, cached: 1 ✔
+[f8/e8410a] process > PROBAND:SORTEDBAM   [100%] 1 of 1, cached: 1 ✔
+[51/c7a241] process > PROBAND:INDEXEDBAM  [100%] 1 of 1, cached: 1 ✔
+[-        ] process > PROBAND:DUPREMOVED  -
+[bc/8d5091] process > PROBAND:DEEPVARIANT [100%] 1 of 1, cached: 1 ✔
+[c9/cb488a] process > MOTHER:FASTQTOSAM   [100%] 1 of 1, cached: 1 ✔
+[20/0c8b9f] process > MOTHER:SAMTOBAM     [100%] 1 of 1, cached: 1 ✔
+[a6/fd36d0] process > MOTHER:SORTEDBAM    [100%] 1 of 1, cached: 1 ✔
+[21/cda645] process > MOTHER:INDEXEDBAM   [100%] 1 of 1, cached: 1 ✔
+[-        ] process > MOTHER:DUPREMOVED   -
+[9a/4ba34e] process > MOTHER:DEEPVARIANT  [100%] 1 of 1, cached: 1 ✔
+[24/ab17ac] process > FATHER:FASTQTOSAM   [100%] 1 of 1, cached: 1 ✔
+[af/bd5220] process > FATHER:SAMTOBAM     [100%] 1 of 1, cached: 1 ✔
+[35/7fab62] process > FATHER:SORTEDBAM    [100%] 1 of 1, cached: 1 ✔
+[60/5582e9] process > FATHER:INDEXEDBAM   [100%] 1 of 1, cached: 1 ✔
+[-        ] process > FATHER:DUPREMOVED   -
+[68/884540] process > FATHER:DEEPVARIANT  [100%] 1 of 1, cached: 1 ✔
+[d2/474070] process > GLNEXUS             [100%] 1 of 1, cached: 1 ✔
+[-        ] process > GLNEXUS2            -
+[-        ] process > EXOMISER            -
+ERROR ~ Error executing process > 'MOTHER:DUPREMOVED'
+
+Caused by:
+  No such variable: EBROOTPICARD -- Check script './subworkflows/../modules/dupremoved.nf' at line: 16
+
+Source block:
+  """
+      source /cm/shared/BCCHR-apps/env_vars/unset_BCM.sh
+      source /cvmfs/soft.computecanada.ca/config/profile/bash.sh
+      module load picard
+  #//load picard from container in file:///mnt/common/SILENT/Act3/singularity/gatk4-4.2.0.sif
+      ${params.java} -Xmx${task.memory} -jar $EBROOTPICARD/picard.jar MarkDuplicates \
+  	R=${params.refgenome} \
+  	I=$x \
+  	O=$y \
+  	REMOVE_DUPLICATES=false \
+  	M=${sampleID}.duplicateMetrics.txt
+      samtools index $sampleID.dupremoved.sorted.bam 
+      """
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+

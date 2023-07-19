@@ -7,13 +7,13 @@
 
 process FASTQTOSAM{
     input:
-    tuple path(x), path(y), val(sampleID)
+    tuple path(x), path(y), val(sampleID), val(familyID)
     //each mode
 
     output:
-    path "${sampleID}.sam"
+    path "${familyID}_${sampleID}.sam"
 
     """
-    bwa mem -t $task.cpus ${params.refgenome} $x $y > ${sampleID}.sam
+    bwa mem -t $task.cpus ${params.refgenome} $x $y > ${familyID}_${sampleID}.sam
     """
 }

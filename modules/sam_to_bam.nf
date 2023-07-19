@@ -10,12 +10,13 @@ process SAMTOBAM{
    input:
    path x
    val sampleID
+   val familyID
 
    output:
-   path "${sampleID}.bam" 
+   path "${familyID}_${sampleID}.bam" 
 
    """
-   samtools view $x -o ${sampleID}.bam
+   samtools view $x -o ${familyID}_${sampleID}.bam
    #add rm $x after adding condition to check for bam 
    """
 }

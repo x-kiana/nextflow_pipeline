@@ -11,12 +11,13 @@ process SORTEDBAM{
    input:
    path x
    val sampleID
+   val familyID
 
    output:
-   path "${sampleID}.sorted.bam"
+   path "${familyID}_${sampleID}.sorted.bam"
 
    """
-   samtools sort $x -o ${sampleID}.sorted.bam
+   samtools sort $x -o ${familyID}_${sampleID}.sorted.bam
    """
 }
 
