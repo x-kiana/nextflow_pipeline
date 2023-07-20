@@ -1,0 +1,6 @@
+probandR1 : "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/proband_r1.fastq"
+probandR2 : "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/proband_r2.fastq"
+motherR1 : "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/mother_r1.fastq"
+motherR2 : "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/mother_r2.fastq"
+fatherR1 : "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/father_r1.fastq"
+fatherR2 : "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/father_r2.fastq"
