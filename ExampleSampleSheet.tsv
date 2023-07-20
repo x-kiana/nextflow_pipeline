@@ -1,0 +1,4 @@
+FamilyID	SampleID	FastqR1	FastqR2
+6	Proband	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/proband_r1.fastq	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/proband_r2.fastq
+6	Mother	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/mother_r1.fastq	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/mother_r2.fastq
+6	Father	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/father_r1.fastq	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/father_r2.fastq
