@@ -5,20 +5,15 @@ include { SAMTOBAM } from "../modules/sam_to_bam.nf"
 include { SORTEDBAM } from "../modules/sorted_bam.nf"
 include { INDEXEDBAM } from "../modules/indexed_bam.nf"
 include { DEEPVARIANT } from "../modules/deepvariant.nf"
+include { DUPREMOVED } from "../modules/dupremoved.nf"
 
 workflow MOTHER {
-    take:
-    fastq1
-    fastq2
-    sampleID
-    familyID
-    main:
-    FASTQTOSAM(tuple fastq1, fastq2, sampleID, familyID)
-    SAMTOBAM(FASTQTOSAM.out, sampleID, familyID)
-    SORTEDBAM(SAMTOBAM.out, sampleID, familyID)
-    INDEXEDBAM(SORTEDBAM.out, sampleID, familyID)
-    DEEPVARIANT(INDEXEDBAM.out, sampleID, familyID)
-    emit:
+    FASTQTOSAM(tuple params.motherR1, params.motherR2, params.motherID, params.familyID)
+    SAMTOBAM(FASTQTOSAM.out, params.motherID, params.familyID)
+    SORTEDBAM(SAMTOBAM.out, params.motherID, params.familyID)
+    INDEXEDBAM(SORTEDBAM.out, params.motherID, params.familyID)
+    DUPREMOVED(INDEXEDBAM.out, params.probandID, params.familyID)
+    DEEPVARIANT(DUPREMOVED.out.dupremoved, params.motherID, params.familyID)
+    emit: 
     mother_deepvariant = DEEPVARIANT.out.gvcf
 }
-

@@ -7,19 +7,20 @@ process DUPREMOVED {
     input:
     path x
     val sampleID
+    val familyID
  
     output:
-    path "${sampleID}.dupremoved.sorted.bam"
+    path "${sampleID}.dupremoved.sorted.bam", emit: dupremoved
     path "${sampleID}.dupremoved.sorted.bam.bai"
 
     script:
     """
-    ${params.java} -Xmx${task.memory} -jar /picard.jar MarkDuplicates \
+    picard -Xmx64g MarkDuplicates \
 	R=${params.refgenome} \
 	I=$x \
-	O=$y \
+	O="${sampleID}.dupremoved.sorted.bam" \
 	REMOVE_DUPLICATES=false \
-	M=${sampleID}.duplicateMetrics.txt
-    samtools index $sampleID.dupremoved.sorted.bam 
+	M=${familyID}_${sampleID}.duplicateMetrics.txt
+    samtools index ${familyID}_${sampleID}.dupremoved.sorted.bam 
     """
 }

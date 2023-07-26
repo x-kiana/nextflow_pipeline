@@ -5,17 +5,15 @@ include { SAMTOBAM } from "../modules/sam_to_bam.nf"
 include { SORTEDBAM } from "../modules/sorted_bam.nf"
 include { INDEXEDBAM } from "../modules/indexed_bam.nf"
 include { DEEPVARIANT } from "../modules/deepvariant.nf"
+include { DUPREMOVED } from "../modules/dupremoved.nf"
 
-workflow SINGLE {
-    take:
-    sample_matrix
-    main:
-    FASTQTOSAM(tuple sample_matrix.getAt([2]), sample_matrix.getAt([3]), sample_matrix.getAt([1]), sample_matrix.getAt([0]))
-    SAMTOBAM(FASTQTOSAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
-    SORTEDBAM(SAMTOBAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
-    INDEXEDBAM(SORTEDBAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
-    DEEPVARIANT(INDEXEDBAM.out, sample_matrix.getAt([1]), sample_matrix.getAt([0]))
+workflow PROBAND {
+    FASTQTOSAM(tuple params.probandR1, params.probandR2, params.probandID, params.familyID)
+    SAMTOBAM(FASTQTOSAM.out, params.probandID, params.familyID)
+    SORTEDBAM(SAMTOBAM.out, params.probandID, params.familyID)
+    INDEXEDBAM(SORTEDBAM.out, params.probandID, params.familyID)
+    DUPREMOVED(INDEXEDBAM.out, params.probandID, params.familyID)
+    DEEPVARIANT(DUPREMOVED.out.dupremoved, params.probandID, params.familyID)
     emit: 
-    deepvariant = DEEPVARIANT.out.gvcf
+    proband_deepvariant = DEEPVARIANT.out.gvcf
 }
-

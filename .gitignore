@@ -1,0 +1,8 @@
+*.out
+*.error
+trace*
+timeline*
+report*
+work
+intermediate_results_dir
+results

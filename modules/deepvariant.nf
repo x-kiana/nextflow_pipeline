@@ -27,7 +27,7 @@ process DEEPVARIANT{
       --intermediate_results_dir="${params.wd}/intermediate_results_dir/${sampleID}" \
     --model_type=WGS \
     --ref="${params.refgenome}" \
-    --reads="${params.wd}/results/${familyID}_${sampleID}.sorted.bam" \
+    --reads="${params.wd}/results/test/${familyID}_${sampleID}.dupremoved.sorted.bam" \
     --output_vcf="${familyID}_${sampleID}_DeepVariant.vcf.gz" \
     --output_gvcf="${familyID}_${sampleID}_DeepVariant.gvcf.gz" \
     --num_shards="${task.cpus}" \
