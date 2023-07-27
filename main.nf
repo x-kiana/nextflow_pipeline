@@ -13,6 +13,6 @@ workflow {
     FATHER()
     GLNEXUS(PROBAND.out.proband_deepvariant, MOTHER.out.mother_deepvariant, FATHER.out.father_deepvariant, params.familyID) 
     GLNEXUS2(GLNEXUS.out, params.familyID)
-    EXOMISER(params.exomiserConfig, GLNEXUS2.out)
+    EXOMISER(params.exomiserConfig, params.familyPed, GLNEXUS2.out, params.probandID, params.hg38)
 }
 
