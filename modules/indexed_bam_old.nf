@@ -9,10 +9,11 @@
 process INDEXEDBAM{
 
    input:
-   tuple path(x), val(sampleID), val(familyID)
+   path x 
+   val sampleID
 
    output:
-   tuple path("${familyID}_${sampleID}.sorted.bam.bai"), val(sampleID), val(familyID) 
+   path "${sampleID}.sorted.bam.bai" 
 
    """
    samtools index $x

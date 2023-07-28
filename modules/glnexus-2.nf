@@ -8,8 +8,7 @@
 
 process GLNEXUS2 {
     input:
-    path x
-    val familyID
+    tuple path(x), val(familyID)
 
     output:
     path "${familyID}.merged.vcf.gz"

@@ -5,12 +5,11 @@
   
 process DUPREMOVED {
     input:
-    path x
-    val sampleID
-    val familyID
+    tuple path(x), val(sampleID), val(familyID)
+    tuple path(y), val(sampleID), val(familyID)
  
     output:
-    path "${familyID}_${sampleID}.dupremoved.sorted.bam", emit: dupremoved
+    tuple path("${familyID}_${sampleID}.dupremoved.sorted.bam"), val(sampleID), val(familyID), emit: dupremoved
     path "${familyID}_${sampleID}.dupremoved.sorted.bam.bai"
 
     script:

@@ -9,13 +9,14 @@
 process SORTEDBAM{
 
    input:
-   tuple path(x), val(sampleID), val(familyID)
+   path x
+   val sampleID
 
    output:
-   tuple path("${familyID}_${sampleID}.sorted.bam"), val(sampleID), val(familyID)
+   path "${sampleID}.sorted.bam"
 
    """
-   samtools sort $x -o ${familyID}_${sampleID}.sorted.bam
+   samtools sort $x -o ${sampleID}.sorted.bam
    """
 }
 

@@ -10,11 +10,13 @@
 
 process GLNEXUS {
     input:
-    tuple path(x), path(y), path(z)
-    val(familyID)
+    path x
+    path y
+    path z
+    val familyID
 
     output:
-    tuple path("${familyID}.glnexus.merged.bcf"), val(familyID)
+    path "${familyID}.glnexus.merged.bcf"
     
     script:
     """

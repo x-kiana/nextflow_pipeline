@@ -8,13 +8,14 @@
 
 process SAMTOBAM{
    input:
-   tuple path(x), val(sampleID), val(familyID)
+   path x
+   val sampleID
 
    output:
-   tuple path("${familyID}_${sampleID}.bam"), val(sampleID), val(familyID)
+   path "${sampleID}.bam" 
 
    """
-   samtools view $x -o ${familyID}_${sampleID}.bam
+   samtools view $x -o ${sampleID}.bam
    #add rm $x after adding condition to check for bam 
    """
 }

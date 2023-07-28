@@ -5,10 +5,10 @@
 ---
 analysis:
     # hg19 or hg38 - ensure that the application has been configured to run the specified assembly otherwise it will halt.
-    #genomeAssembly: hg38
-    #vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/family_nf.merged.vcf.gz
-    #ped: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6.ped
-    #proband: Proband 
+    genomeAssembly: hg38
+    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/family_nf.merged.vcf.gz
+    ped: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6.ped
+    proband: Proband 
     hpoIds: ['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
     # These are the default settings, with values representing the maximum minor allele frequency in percent (%) permitted for an
     # allele to be considered as a causative candidate under that mode of inheritance.
