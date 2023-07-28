@@ -2,7 +2,8 @@ name: BwaGenomeAnalysis
 channels:
  - bioconda
 dependencies:
-- bwa
 - picard
+- samtools
+- htslib
 prefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/scripts
 
