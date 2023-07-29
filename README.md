@@ -3,6 +3,7 @@
 This is a genetic analysis pipeline written in nextflow, to be eventually used in rare disease diagnosis. In its current state, the pipeline is capable of mapping and analayzing a family's (currently set to mother, father, and proband in testing, but compatible with other structures as well) raw genetic data.
 The process flow consists of the following:
 
+## SNV workflow
 ### Individual processing
 * Reading data from spreadsheet
   * Prior to any processes being called, each row of the provided sample sheet is read into a tuple (an example sample sheet has been provided)
