@@ -10,8 +10,7 @@
 
 process GLNEXUS {
     input:
-    tuple path(x), path(y), path(z)
-    val(familyID)
+    tuple path(x), val(familyID)
 
     output:
     tuple path("${familyID}.glnexus.merged.bcf"), val(familyID)
@@ -21,7 +20,7 @@ process GLNEXUS {
 #can add WGS/WES/unfiltered - fine for now
     /mnt/common/Precision/GLNexus/glnexus_cli -c DeepVariant_unfiltered \
         --threads ${task.cpus} \
-        $x $y $z \
+        $x \
         > ${familyID}.glnexus.merged.bcf
     """
 }

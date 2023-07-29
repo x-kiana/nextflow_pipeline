@@ -6,7 +6,7 @@
 analysis:
     # hg19 or hg38 - ensure that the application has been configured to run the specified assembly otherwise it will halt.
     genomeAssembly: hg38
-    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/family_nf.merged.vcf.gz
+    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/6.merged.vcf.gz
     ped: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6.ped
     proband: Proband 
     hpoIds: ['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
@@ -136,8 +136,8 @@ outputOptions:
     # according to the outputFormats option. If unspecified this will default to the following: 
     # {exomiserDir}/results/input-vcf-name-exomiser-results.html
     # alternatively, specify a fully qualifed path only. e.g. /users/jules/exomes/analysis    
-    outputPrefix: exomiser_ 
-    outputDirectory: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/
+    outputPrefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/exomiser 
+    outputDirectory: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test
     #out-format options: HTML, JSON, TSV_GENE, TSV_VARIANT, VCF (default: HTML)
     outputFormats: [HTML, JSON, TSV_GENE, TSV_VARIANT, VCF]
 

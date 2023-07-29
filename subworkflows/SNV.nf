@@ -22,9 +22,9 @@ workflow SNV {
     DUPREMOVED(SORTEDBAM.out, INDEXEDBAM.out)
     DEEPVARIANT(DUPREMOVED.out.dupremoved)
 
-    family_deepvariant = DEEPVARIANT.out.collect()
+    family_deepvariant = DEEPVARIANT.out.gvcf.groupTuple(by: 1)
 
-    GLNEXUS(family_deepvariant, params.familyID) 
+    GLNEXUS(family_deepvariant) 
     GLNEXUS2(GLNEXUS.out)
     EXOMISER(params.exomiserConfig, GLNEXUS2.out)
 }
