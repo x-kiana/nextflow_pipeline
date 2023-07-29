@@ -16,7 +16,8 @@ process DEEPVARIANT{
     tuple path(x), val(sampleID), val(familyID)
     
     output:
-    path "${familyID}_${sampleID}_DeepVariant.gvcf.gz"
+    tuple path("${familyID}_${sampleID}_DeepVariant.gvcf.gz"), val(familyID), emit: gvcf
+    path "${familyID}_${sampleID}_DeepVariant.vcf.gz"
 
     script:
     """
