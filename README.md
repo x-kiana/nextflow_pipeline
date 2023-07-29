@@ -42,7 +42,7 @@ To run the pipeline using the test files, follow the following steps:
 *  If you ran into any problems, you can open an issue, and I'll do my best to help you debug. 
 ## Notes
 * If you are using a different job scheduler than slurm, you would need to create a separate profile for it in the profiles section. You can find more info on this in the nextflow documentation.
-* To run the pipeline on full genome data, remove the --regions tag in the modules/deepvariant.nf script. This will be determined using a conditional in later versions, but editing is necessary for current version (0.0.1)
+* To run the pipeline on full genome data, remove the --regions tag in the modules/deepvariant.nf script. This will be determined using a conditional in later versions, but editing is necessary for current version (0.0.2)
 * Various scripts in this repo are not included in the first release of the pipeline, as they are still under development and have not been tested. These scripts in addition to ones from older versions can currently be found in the misc folder.
 * Currently, nextflow doesn't seem to be able to update params when specified through both the params section and inside a profile. Therefore, a params.yml file has been created for ease of switching to the test paths. An example of how this is used is included in the main.sh nextflow call. However, this is no longer necessary when reading paths from a spreadsheet, and has only been provided as anexample.
 ## Future Plans
