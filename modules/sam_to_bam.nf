@@ -12,7 +12,7 @@ process SAMTOBAM{
 
    output:
    tuple path("${familyID}_${sampleID}.bam"), val(sampleID), val(familyID)
-
+//add multithreading
    """
    samtools view $x -o ${familyID}_${sampleID}.bam
    #add rm $x after adding condition to check for bam 

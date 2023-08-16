@@ -1,0 +1,182 @@
+Aug-16 13:56:09.079 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile gpcc -params-file params.yml -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
+Aug-16 13:56:09.348 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.1
+Aug-16 13:56:09.371 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/BCRICWH.LAN/kiana.rashidi/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.2
+Aug-16 13:56:09.390 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-16 13:56:09.391 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-16 13:56:09.395 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug-16 13:56:09.450 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-16 13:56:09.472 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/nextflow.config
+Aug-16 13:56:09.473 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/nextflow.config
+Aug-16 13:56:09.742 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `gpcc`
+Aug-16 13:56:10.445 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [sockeye, gpcc]
+Aug-16 13:56:10.500 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-16 13:56:10.518 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [sick_liskov] DSL2 - revision: cf037672b0
+Aug-16 13:56:10.519 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-16 13:56:10.519 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Aug-16 13:56:10.530 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/BCRICWH.LAN/kiana.rashidi/.nextflow/secrets/store.json
+Aug-16 13:56:10.533 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@24eb65e3] - activable => nextflow.secret.LocalSecretsProvider@24eb65e3
+Aug-16 13:56:10.584 [main] DEBUG nextflow.Session - Session UUID: ac9e882b-f6ed-44f6-8123-9f356c19ce57
+Aug-16 13:56:10.584 [main] DEBUG nextflow.Session - Run name: sick_liskov
+Aug-16 13:56:10.585 [main] DEBUG nextflow.Session - Executor pool size: 80
+Aug-16 13:56:10.595 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=240; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Aug-16 13:56:10.729 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.1 build 5866
+  Created: 15-04-2023 06:51 UTC (14-04-2023 23:51 PDT)
+  System: Linux 4.18.0-147.el8.x86_64
+  Runtime: Groovy 3.0.16 on Java HotSpot(TM) 64-Bit Server VM 20.0.1+9-29
+  Encoding: UTF-8 (UTF-8)
+  Process: 859111@gpcc-node09 [192.168.21.59]
+  CPUs: 80 - Mem: 376.6 GB (2.2 GB) - Swap: 0 (0)
+Aug-16 13:56:10.844 [main] DEBUG nextflow.Session - Work-dir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work [panfs]
+Aug-16 13:56:10.845 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/bin
+Aug-16 13:56:10.855 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-16 13:56:10.864 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-16 13:56:10.900 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-16 13:56:10.911 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 81; maxThreads: 1000
+Aug-16 13:56:11.116 [main] DEBUG nextflow.Session - Session start
+Aug-16 13:56:11.121 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/trace-20230816-50170466.txt
+Aug-16 13:56:11.376 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-16 13:56:11.954 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FASTQTOSAM` matches process SNV:FASTQTOSAM
+Aug-16 13:56:11.963 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:11.963 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:11.974 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Aug-16 13:56:11.979 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 60; pollInterval: 5s; dumpInterval: 5m 
+Aug-16 13:56:11.982 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Aug-16 13:56:12.043 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SAMTOBAM` matches process SNV:SAMTOBAM
+Aug-16 13:56:12.044 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.044 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.048 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SORTEDBAM` matches process SNV:SORTEDBAM
+Aug-16 13:56:12.048 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.048 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.052 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:INDEXEDBAM` matches process SNV:INDEXEDBAM
+Aug-16 13:56:12.052 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.052 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.059 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:DUPREMOVED` matches process SNV:DUPREMOVED
+Aug-16 13:56:12.060 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.060 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.065 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:DEEPVARIANT` matches process SNV:DEEPVARIANT
+Aug-16 13:56:12.066 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.066 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.074 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GLNEXUS` matches process SNV:GLNEXUS
+Aug-16 13:56:12.074 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.074 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.078 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GLNEXUS2` matches process SNV:GLNEXUS2
+Aug-16 13:56:12.078 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.079 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.081 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:EXOMISER` matches process SNV:EXOMISER
+Aug-16 13:56:12.081 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-16 13:56:12.082 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-16 13:56:12.086 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: INDEXEDBAM, GLNEXUS2, SNV:DEEPVARIANT, SNV:GLNEXUS, SNV:SAMTOBAM, SNV:GLNEXUS2, SNV:DUPREMOVED, EXOMISER, GLNEXUS, SNV:INDEXEDBAM, FASTQTOSAM, SNV:SORTEDBAM, SAMTOBAM, DUPREMOVED, DEEPVARIANT, SORTEDBAM, SNV:FASTQTOSAM, SNV:EXOMISER
+Aug-16 13:56:12.087 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
+Aug-16 13:56:12.092 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:FASTQTOSAM
+Aug-16 13:56:12.093 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:SAMTOBAM
+Aug-16 13:56:12.093 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:SORTEDBAM
+Aug-16 13:56:12.093 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:INDEXEDBAM
+Aug-16 13:56:12.093 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:DUPREMOVED
+Aug-16 13:56:12.094 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:DEEPVARIANT
+Aug-16 13:56:12.094 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:GLNEXUS
+Aug-16 13:56:12.094 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:GLNEXUS2
+Aug-16 13:56:12.094 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:EXOMISER
+Aug-16 13:56:12.095 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Aug-16 13:56:12.095 [main] DEBUG nextflow.Session - Session await
+Aug-16 13:56:12.270 [Actor Thread 24] DEBUG nextflow.conda.CondaCache - conda found local env for environment=scripts/GenomeAnalysisGAM.yml; path=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/conda/GenomeAnalysisGAM-3aecf9a7e8a0d459abe8df30eae47af6
+Aug-16 13:56:12.513 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:FASTQTOSAM (3) > jobId: 132308; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/df/5b0d5e94bfac1d86e7b34582d91f18
+Aug-16 13:56:12.514 [Task submitter] INFO  nextflow.Session - [df/5b0d5e] Submitted process > SNV:FASTQTOSAM (3)
+Aug-16 13:56:12.548 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:FASTQTOSAM (2) > jobId: 132309; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/8f/2314e72e2c70b0768fa3d96914b094
+Aug-16 13:56:12.548 [Task submitter] INFO  nextflow.Session - [8f/2314e7] Submitted process > SNV:FASTQTOSAM (2)
+Aug-16 13:56:12.604 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:FASTQTOSAM (1) > jobId: 132310; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/39/5f3ffd8b5a1565a2d442c653820542
+Aug-16 13:56:12.604 [Task submitter] INFO  nextflow.Session - [39/5f3ffd] Submitted process > SNV:FASTQTOSAM (1)
+Aug-16 13:56:26.993 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132309; id: 2; name: SNV:FASTQTOSAM (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/8f/2314e72e2c70b0768fa3d96914b094 started: 1692219377008; exited: 2023-08-16T20:56:23.349827Z; ]
+Aug-16 13:56:27.052 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:SAMTOBAM (1) > jobId: 132311; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0e/607b41bbc83fdbbc75eaac9eb341de
+Aug-16 13:56:27.052 [Task submitter] INFO  nextflow.Session - [0e/607b41] Submitted process > SNV:SAMTOBAM (1)
+Aug-16 13:56:31.992 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132311; id: 4; name: SNV:SAMTOBAM (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0e/607b41bbc83fdbbc75eaac9eb341de started: 1692219391989; exited: 2023-08-16T20:56:31.801705Z; ]
+Aug-16 13:56:32.042 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:SORTEDBAM (1) > jobId: 132312; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/96/7fdad5013e9d7a5d0836c06ddb4acc
+Aug-16 13:56:32.042 [Task submitter] INFO  nextflow.Session - [96/7fdad5] Submitted process > SNV:SORTEDBAM (1)
+Aug-16 13:56:36.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132310; id: 1; name: SNV:FASTQTOSAM (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/39/5f3ffd8b5a1565a2d442c653820542 started: 1692219377011; exited: 2023-08-16T20:56:35.149497Z; ]
+Aug-16 13:56:37.004 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132312; id: 5; name: SNV:SORTEDBAM (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/96/7fdad5013e9d7a5d0836c06ddb4acc started: 1692219397002; exited: 2023-08-16T20:56:36.446557Z; ]
+Aug-16 13:56:37.038 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:SAMTOBAM (2) > jobId: 132313; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/30/929825cf502bcb04239d1f9b79eced
+Aug-16 13:56:37.038 [Task submitter] INFO  nextflow.Session - [30/929825] Submitted process > SNV:SAMTOBAM (2)
+Aug-16 13:56:37.066 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:INDEXEDBAM (1) > jobId: 132314; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/89/1a817ee8d2ff5d61faf5f99ab40ff5
+Aug-16 13:56:37.066 [Task submitter] INFO  nextflow.Session - [89/1a817e] Submitted process > SNV:INDEXEDBAM (1)
+Aug-16 13:56:41.991 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132313; id: 6; name: SNV:SAMTOBAM (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/30/929825cf502bcb04239d1f9b79eced started: 1692219401989; exited: 2023-08-16T20:56:41.137609Z; ]
+Aug-16 13:56:42.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132314; id: 7; name: SNV:INDEXEDBAM (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/89/1a817ee8d2ff5d61faf5f99ab40ff5 started: 1692219402003; exited: 2023-08-16T20:56:41.375779Z; ]
+Aug-16 13:56:42.027 [Actor Thread 69] INFO  nextflow.conda.CondaCache - Creating env using conda: scripts/BwaGenomeAnalysis.yml [cache /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/conda/BwaGenomeAnalysis-a3329e5ce7982901629970cdda5a58c4]
+Aug-16 13:56:42.040 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:SORTEDBAM (2) > jobId: 132315; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/af/502e450f2b106025203846f1c91f17
+Aug-16 13:56:42.040 [Task submitter] INFO  nextflow.Session - [af/502e45] Submitted process > SNV:SORTEDBAM (2)
+Aug-16 13:56:46.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132308; id: 3; name: SNV:FASTQTOSAM (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/df/5b0d5e94bfac1d86e7b34582d91f18 started: 1692219376990; exited: 2023-08-16T20:56:42.927376Z; ]
+Aug-16 13:56:47.004 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132315; id: 8; name: SNV:SORTEDBAM (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/af/502e450f2b106025203846f1c91f17 started: 1692219407002; exited: 2023-08-16T20:56:46.160252Z; ]
+Aug-16 13:56:47.040 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:SAMTOBAM (3) > jobId: 132316; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/54/8cfe9bb0292c5ba3d85b16683e7780
+Aug-16 13:56:47.040 [Task submitter] INFO  nextflow.Session - [54/8cfe9b] Submitted process > SNV:SAMTOBAM (3)
+Aug-16 13:56:47.067 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:INDEXEDBAM (2) > jobId: 132317; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/72/54c7e56101fcd1f34af67c013ce0ae
+Aug-16 13:56:47.067 [Task submitter] INFO  nextflow.Session - [72/54c7e5] Submitted process > SNV:INDEXEDBAM (2)
+Aug-16 13:56:51.991 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132316; id: 10; name: SNV:SAMTOBAM (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/54/8cfe9bb0292c5ba3d85b16683e7780 started: 1692219411989; exited: 2023-08-16T20:56:51.171642Z; ]
+Aug-16 13:56:52.006 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132317; id: 11; name: SNV:INDEXEDBAM (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/72/54c7e56101fcd1f34af67c013ce0ae started: 1692219412003; exited: 2023-08-16T20:56:50.831872Z; ]
+Aug-16 13:56:52.088 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:SORTEDBAM (3) > jobId: 132318; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/7d/a175b596ab1010a01176b0d4666da7
+Aug-16 13:56:52.088 [Task submitter] INFO  nextflow.Session - [7d/a175b5] Submitted process > SNV:SORTEDBAM (3)
+Aug-16 13:56:56.993 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132318; id: 12; name: SNV:SORTEDBAM (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/7d/a175b596ab1010a01176b0d4666da7 started: 1692219416990; exited: 2023-08-16T20:56:56.164491Z; ]
+Aug-16 13:56:57.058 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:INDEXEDBAM (3) > jobId: 132319; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/02/b6771486edc6c8d0934f6c974d6c41
+Aug-16 13:56:57.059 [Task submitter] INFO  nextflow.Session - [02/b67714] Submitted process > SNV:INDEXEDBAM (3)
+Aug-16 13:57:01.992 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132319; id: 14; name: SNV:INDEXEDBAM (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/02/b6771486edc6c8d0934f6c974d6c41 started: 1692219421990; exited: 2023-08-16T20:57:01.636268Z; ]
+Aug-16 14:01:17.012 [Task monitor] DEBUG n.processor.TaskPollingMonitor - No more task to compute -- The following nodes are still active:
+[process] SNV:DUPREMOVED
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (queue) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] SNV:DEEPVARIANT
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] SNV:GLNEXUS
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] SNV:GLNEXUS2
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] SNV:EXOMISER
+  status=ACTIVE
+  port 0: (value) bound ; channel: x
+  port 1: (queue) OPEN  ; channel: y
+  port 2: (cntrl) -     ; channel: $
+
+Aug-16 14:02:27.736 [Actor Thread 69] DEBUG nextflow.conda.CondaCache - 'conda' create complete env=scripts/BwaGenomeAnalysis.yml path=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/conda/BwaGenomeAnalysis-a3329e5ce7982901629970cdda5a58c4
+Aug-16 14:02:27.874 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:DUPREMOVED (2) > jobId: 132325; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/6e/ae265bb9fbf26bdd88a336736a5516
+Aug-16 14:02:27.874 [Task submitter] INFO  nextflow.Session - [6e/ae265b] Submitted process > SNV:DUPREMOVED (2)
+Aug-16 14:02:27.900 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:DUPREMOVED (1) > jobId: 132326; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/8b/3aa4b02918445113e6a5730898f043
+Aug-16 14:02:27.900 [Task submitter] INFO  nextflow.Session - [8b/3aa4b0] Submitted process > SNV:DUPREMOVED (1)
+Aug-16 14:02:27.927 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:DUPREMOVED (3) > jobId: 132327; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/17/76da2e51d97ea04a552c7ef2bfa323
+Aug-16 14:02:27.927 [Task submitter] INFO  nextflow.Session - [17/76da2e] Submitted process > SNV:DUPREMOVED (3)
+Aug-16 14:02:52.020 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132325; id: 13; name: SNV:DUPREMOVED (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/6e/ae265bb9fbf26bdd88a336736a5516 started: 1692219752017; exited: 2023-08-16T21:02:47.451767Z; ]
+Aug-16 14:02:52.063 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132327; id: 15; name: SNV:DUPREMOVED (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/17/76da2e51d97ea04a552c7ef2bfa323 started: 1692219752035; exited: 2023-08-16T21:02:50.835578Z; ]
+Aug-16 14:02:52.101 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:DEEPVARIANT (1) > jobId: 132328; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/d0/35f696d0ac7d1f6cbd72d4baa565da
+Aug-16 14:02:52.101 [Task submitter] INFO  nextflow.Session - [d0/35f696] Submitted process > SNV:DEEPVARIANT (1)
+Aug-16 14:02:52.153 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:DEEPVARIANT (2) > jobId: 132329; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/83/258316a9553bd7021ef012bf8c83c2
+Aug-16 14:02:52.153 [Task submitter] INFO  nextflow.Session - [83/258316] Submitted process > SNV:DEEPVARIANT (2)
+Aug-16 14:02:57.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132326; id: 9; name: SNV:DUPREMOVED (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/8b/3aa4b02918445113e6a5730898f043 started: 1692219752032; exited: 2023-08-16T21:02:52.32621Z; ]
+Aug-16 14:02:57.072 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:DEEPVARIANT (3) > jobId: 132330; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/c1/f813649c0cd46ff5a503fca5dc90d8
+Aug-16 14:02:57.072 [Task submitter] INFO  nextflow.Session - [c1/f81364] Submitted process > SNV:DEEPVARIANT (3)
+Aug-16 14:03:37.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132328; id: 16; name: SNV:DEEPVARIANT (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/d0/35f696d0ac7d1f6cbd72d4baa565da started: 1692219777064; exited: 2023-08-16T21:03:33.133959Z; ]
+Aug-16 14:03:37.055 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132329; id: 17; name: SNV:DEEPVARIANT (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/83/258316a9553bd7021ef012bf8c83c2 started: 1692219777067; exited: 2023-08-16T21:03:36.379744Z; ]
+Aug-16 14:03:47.024 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 132330; id: 18; name: SNV:DEEPVARIANT (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/c1/f813649c0cd46ff5a503fca5dc90d8 started: 1692219782021; exited: 2023-08-16T21:03:42.217646Z; ]
+Aug-16 14:03:47.113 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:GLNEXUS (1) > jobId: 132334; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b
+Aug-16 14:03:47.113 [Task submitter] INFO  nextflow.Session - [f3/700d7b] Submitted process > SNV:GLNEXUS (1)
+Aug-16 14:06:17.028 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]
+Aug-16 14:11:17.041 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]
+Aug-16 14:16:17.154 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]
+Aug-16 14:21:17.215 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]
+Aug-16 14:26:17.235 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]
+Aug-16 14:31:17.242 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]
+Aug-16 14:36:17.250 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor slurm > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[jobId: 132334; id: 19; name: SNV:GLNEXUS (1); status: SUBMITTED; exit: -; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/700d7b3639cf68d5699e6438f5726b started: -; exited: -; ]

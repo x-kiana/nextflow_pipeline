@@ -1,4 +1,7 @@
-FamilyID	SampleID	FastqR1	FastqR2
-6	Proband	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/proband_r1.fastq	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/proband_r2.fastq
-6	Mother	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/mother_r1.fastq	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/mother_r2.fastq
-6	Father	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/father_r1.fastq	/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/testing/example_data/father_r2.fastq
+FamilyID	SampleID	PaternalID	MaternalID	"Sex (1=male,2=female,0=unk)"	"Affected (1=unaffected,2=affected)"	"HPO terms (comma-sep list, 0 for NA)"	"Family Member (Proband, Mother, Father, Sibling)"	FastqR1	FastqR2
+6	Proband_6	Father_6	Mother_6	1	2	"HP:0001253,HP:000495,HP:00084"	Proband	/path/fq.1.gz	/path/fq.2.gz
+6	Mother_6	0	0	2	1	0	Mother	/path/fq.1.gz	/path/fq.2.gz
+6	Father_6	0	0	1	1	0	Father	/path/fq.1.gz	/path/fq.2.gz
+10	Proband_10	Father_10	Mother_10	2	2	"HP:0001253,HP:000495"	Proband	x	x1
+10	Mother_10	0	0	2	1	0	Mother	y	y1
+10	Father_10	0	0	1	1	0	Father	z	z1

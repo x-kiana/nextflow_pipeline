@@ -1,0 +1,4 @@
+FamilyID	SampleID	PaternalID	MaternalID	"Sex (1=male,2=female,0=unk)"	"Affected (1=unaffected,2=affected)"
+6	Proband_6	Father_6	Mother_6	1	2
+6	Mother_6	0	0	2	1
+6	Father_6	0	0	1	1

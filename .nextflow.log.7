@@ -1,0 +1,242 @@
+Aug-08 13:17:54.991 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main_test.nf -profile gpcc -params-file params.yml -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
+Aug-08 13:17:56.394 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.1
+Aug-08 13:17:56.412 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/BCRICWH.LAN/kiana.rashidi/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.2
+Aug-08 13:17:56.425 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-08 13:17:56.426 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-08 13:17:56.429 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Aug-08 13:17:56.437 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-08 13:17:56.453 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/nextflow.config
+Aug-08 13:17:56.453 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/nextflow.config
+Aug-08 13:17:56.506 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `gpcc`
+Aug-08 13:17:57.097 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [sockeye, gpcc]
+Aug-08 13:17:57.140 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-08 13:17:57.154 [main] INFO  nextflow.cli.CmdRun - Launching `main_test.nf` [hungry_noether] DSL2 - revision: 68abad571c
+Aug-08 13:17:57.155 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-08 13:17:57.155 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Aug-08 13:17:57.163 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/BCRICWH.LAN/kiana.rashidi/.nextflow/secrets/store.json
+Aug-08 13:17:57.166 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@24eb65e3] - activable => nextflow.secret.LocalSecretsProvider@24eb65e3
+Aug-08 13:17:57.208 [main] DEBUG nextflow.Session - Session UUID: ac9e882b-f6ed-44f6-8123-9f356c19ce57
+Aug-08 13:17:57.208 [main] DEBUG nextflow.Session - Run name: hungry_noether
+Aug-08 13:17:57.209 [main] DEBUG nextflow.Session - Executor pool size: 80
+Aug-08 13:17:57.219 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=240; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Aug-08 13:17:57.240 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.1 build 5866
+  Created: 15-04-2023 06:51 UTC (14-04-2023 23:51 PDT)
+  System: Linux 4.18.0-147.el8.x86_64
+  Runtime: Groovy 3.0.16 on Java HotSpot(TM) 64-Bit Server VM 20.0.1+9-29
+  Encoding: UTF-8 (UTF-8)
+  Process: 4100682@gpcc-node09 [192.168.21.59]
+  CPUs: 80 - Mem: 376.6 GB (79 GB) - Swap: 0 (0)
+Aug-08 13:17:57.311 [main] DEBUG nextflow.Session - Work-dir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work [panfs]
+Aug-08 13:17:57.311 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/bin
+Aug-08 13:17:57.321 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-08 13:17:57.330 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-08 13:17:57.368 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-08 13:17:57.376 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 81; maxThreads: 1000
+Aug-08 13:17:57.495 [main] DEBUG nextflow.Session - Session start
+Aug-08 13:17:57.499 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/trace-20230808-47877114.txt
+Aug-08 13:17:57.733 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-08 13:17:58.302 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FASTQTOSAM` matches process SNV:FASTQTOSAM
+Aug-08 13:17:58.311 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.311 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.321 [main] DEBUG nextflow.executor.Executor - [warm up] executor > slurm
+Aug-08 13:17:58.327 [main] DEBUG n.processor.TaskPollingMonitor - Creating task monitor for executor 'slurm' > capacity: 60; pollInterval: 5s; dumpInterval: 5m 
+Aug-08 13:17:58.330 [main] DEBUG n.executor.AbstractGridExecutor - Creating executor 'slurm' > queue-stat-interval: 1m
+Aug-08 13:17:58.389 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SAMTOBAM` matches process SNV:SAMTOBAM
+Aug-08 13:17:58.390 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.390 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.393 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SORTEDBAM` matches process SNV:SORTEDBAM
+Aug-08 13:17:58.394 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.394 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.398 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:INDEXEDBAM` matches process SNV:INDEXEDBAM
+Aug-08 13:17:58.398 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.399 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.406 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:DUPREMOVED` matches process SNV:DUPREMOVED
+Aug-08 13:17:58.407 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.407 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.412 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:DEEPVARIANT` matches process SNV:DEEPVARIANT
+Aug-08 13:17:58.412 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.412 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.420 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GLNEXUS` matches process SNV:GLNEXUS
+Aug-08 13:17:58.421 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.421 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.424 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:GLNEXUS2` matches process SNV:GLNEXUS2
+Aug-08 13:17:58.425 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.425 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.427 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:EXOMISER` matches process SNV:EXOMISER
+Aug-08 13:17:58.428 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: slurm
+Aug-08 13:17:58.428 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'slurm'
+Aug-08 13:17:58.432 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: INDEXEDBAM, GLNEXUS2, SNV:DEEPVARIANT, SNV:GLNEXUS, SNV:SAMTOBAM, SNV:GLNEXUS2, SNV:DUPREMOVED, EXOMISER, GLNEXUS, SNV:INDEXEDBAM, FASTQTOSAM, SNV:SORTEDBAM, SAMTOBAM, DUPREMOVED, DEEPVARIANT, SORTEDBAM, SNV:FASTQTOSAM, SNV:EXOMISER
+Aug-08 13:17:58.433 [main] DEBUG nextflow.Session - Igniting dataflow network (10)
+Aug-08 13:17:58.438 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:FASTQTOSAM
+Aug-08 13:17:58.439 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:SAMTOBAM
+Aug-08 13:17:58.439 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:SORTEDBAM
+Aug-08 13:17:58.439 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:INDEXEDBAM
+Aug-08 13:17:58.440 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:DUPREMOVED
+Aug-08 13:17:58.440 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:DEEPVARIANT
+Aug-08 13:17:58.440 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:GLNEXUS
+Aug-08 13:17:58.440 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:GLNEXUS2
+Aug-08 13:17:58.441 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNV:EXOMISER
+Aug-08 13:17:58.441 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Aug-08 13:17:58.441 [main] DEBUG nextflow.Session - Session await
+Aug-08 13:17:58.552 [Actor Thread 24] DEBUG nextflow.conda.CondaCache - conda found local env for environment=scripts/GenomeAnalysisGAM.yml; path=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/conda/GenomeAnalysisGAM-3aecf9a7e8a0d459abe8df30eae47af6
+Aug-08 13:17:58.653 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [39/5f3ffd] Cached process > SNV:FASTQTOSAM (1)
+Aug-08 13:17:58.653 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [df/5b0d5e] Cached process > SNV:FASTQTOSAM (3)
+Aug-08 13:17:58.653 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [8f/2314e7] Cached process > SNV:FASTQTOSAM (2)
+Aug-08 13:17:58.684 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [54/8cfe9b] Cached process > SNV:SAMTOBAM (3)
+Aug-08 13:17:58.684 [Actor Thread 31] INFO  nextflow.processor.TaskProcessor - [30/929825] Cached process > SNV:SAMTOBAM (2)
+Aug-08 13:17:58.684 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [0e/607b41] Cached process > SNV:SAMTOBAM (1)
+Aug-08 13:17:58.691 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [af/502e45] Cached process > SNV:SORTEDBAM (1)
+Aug-08 13:17:58.693 [Actor Thread 43] INFO  nextflow.processor.TaskProcessor - [7d/a175b5] Cached process > SNV:SORTEDBAM (3)
+Aug-08 13:17:58.693 [Actor Thread 41] INFO  nextflow.processor.TaskProcessor - [96/7fdad5] Cached process > SNV:SORTEDBAM (2)
+Aug-08 13:17:58.700 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [89/1a817e] Cached process > SNV:INDEXEDBAM (2)
+Aug-08 13:17:58.700 [Actor Thread 57] INFO  nextflow.processor.TaskProcessor - [72/54c7e5] Cached process > SNV:INDEXEDBAM (1)
+Aug-08 13:17:58.700 [Actor Thread 64] INFO  nextflow.processor.TaskProcessor - [02/b67714] Cached process > SNV:INDEXEDBAM (3)
+Aug-08 13:17:58.714 [Actor Thread 77] DEBUG nextflow.conda.CondaCache - conda found local env for environment=scripts/BwaGenomeAnalysis.yml; path=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/conda/BwaGenomeAnalysis-a3329e5ce7982901629970cdda5a58c4
+Aug-08 13:17:58.718 [Actor Thread 72] INFO  nextflow.processor.TaskProcessor - [86/fec584] Cached process > SNV:DUPREMOVED (2)
+Aug-08 13:17:58.718 [Actor Thread 75] INFO  nextflow.processor.TaskProcessor - [cb/eb31b4] Cached process > SNV:DUPREMOVED (3)
+Aug-08 13:17:58.722 [Actor Thread 70] INFO  nextflow.processor.TaskProcessor - [6a/77fb6a] Cached process > SNV:DUPREMOVED (1)
+Aug-08 13:17:58.743 [Actor Thread 77] INFO  nextflow.processor.TaskProcessor - [7e/d09886] Cached process > SNV:DEEPVARIANT (1)
+Aug-08 13:17:58.743 [Actor Thread 76] INFO  nextflow.processor.TaskProcessor - [dd/ae693b] Cached process > SNV:DEEPVARIANT (2)
+Aug-08 13:17:58.744 [Actor Thread 81] INFO  nextflow.processor.TaskProcessor - [d0/13e32f] Cached process > SNV:DEEPVARIANT (3)
+Aug-08 13:17:58.757 [Actor Thread 70] INFO  nextflow.processor.TaskProcessor - [79/c9c4c5] Cached process > SNV:GLNEXUS (1)
+Aug-08 13:17:58.767 [Actor Thread 79] INFO  nextflow.processor.TaskProcessor - [b6/c5957f] Cached process > SNV:GLNEXUS2 (1)
+Aug-08 13:17:58.898 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process SNV:EXOMISER (1) > jobId: 131682; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0c/8409b45c74827b9da3635c93a0180f
+Aug-08 13:17:58.898 [Task submitter] INFO  nextflow.Session - [0c/8409b4] Submitted process > SNV:EXOMISER (1)
+Aug-08 13:18:08.337 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 131682; id: 21; name: SNV:EXOMISER (1); status: COMPLETED; exit: 1; error: -; workDir: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0c/8409b45c74827b9da3635c93a0180f started: 1691525883336; exited: 2023-08-08T20:18:05.349099Z; ]
+Aug-08 13:18:08.340 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=SNV:EXOMISER (1); work-dir=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0c/8409b45c74827b9da3635c93a0180f
+  error [nextflow.exception.ProcessFailedException]: Process `SNV:EXOMISER (1)` terminated with an error exit status (1)
+Aug-08 13:18:08.364 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'SNV:EXOMISER (1)'
+
+Caused by:
+  Process `SNV:EXOMISER (1)` terminated with an error exit status (1)
+
+Command executed:
+
+  sed -i "10i    ped: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/6_test.ped" Exomiser_Template.yml
+  sed -i "8i    genomeAssembly: hg38" Exomiser_Template.yml
+  sed -i "9i    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/6_test.merged.vcf.gz" Exomiser_Template.yml
+  sed -i "140i    outputPrefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/6_test_" Exomiser_Template.yml
+  /mnt/common/Precision/NextFlow/June2023/jdk-20.0.1/bin/java -Xmx4g -jar -Djava.io.tmpdir=/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0//exomiser-cli-13.1.0.jar         --analysis Exomiser_Template.yml         --spring.config.location=/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/
+
+Command exit status:
+  1
+
+Command output:
+  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+  	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+  Caused by: java.lang.IllegalArgumentException: Unable to parse job from file Exomiser_Template.yml please check the format.
+  	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:87)
+  	at org.monarchinitiative.exomiser.core.analysis.JobReader.readJob(JobReader.java:74)
+  	at org.monarchinitiative.exomiser.cli.CommandLineJobReader.readJobs(CommandLineJobReader.java:68)
+  	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.run(ExomiserCommandLineRunner.java:55)
+  	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:782)
+  	... 5 common frames omitted
+  Caused by: org.monarchinitiative.exomiser.core.proto.ProtoParser$ProtoParserException: Unable to parse message type org.monarchinitiative.exomiser.api.v1.JobProto$Job from file Exomiser_Template.yml
+  	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:60)
+  	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:81)
+  	... 9 common frames omitted
+  Caused by: com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException: while parsing a block mapping
+   in 'reader', line 6, column 1:
+      analysis:
+      ^
+  expected <block end>, but found '<block mapping start>'
+   in 'reader', line 14, column 5:
+          proband: Proband 
+          ^
+  
+   at [Source: (BufferedReader); line: 12, column: 89]
+  	at com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException.from(MarkedYAMLException.java:28)
+  	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:407)
+  	at com.fasterxml.jackson.core.JsonParser.nextFieldName(JsonParser.java:1038)
+  	at com.fasterxml.jackson.databind.deser.std.BaseNodeDeserializer._deserializeContainerNoRecursion(JsonNodeDeserializer.java:440)
+  	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:84)
+  	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:20)
+  	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+  	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4716)
+  	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3065)
+  	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseYaml(ProtoParser.java:81)
+  	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:56)
+  	... 10 common frames omitted
+  Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+   in 'reader', line 6, column 1:
+      analysis:
+      ^
+  expected <block end>, but found '<block mapping start>'
+   in 'reader', line 14, column 5:
+          proband: Proband 
+          ^
+  
+  	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+  	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+  	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:175)
+  	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:403)
+  	... 19 common frames omitted
+
+Command wrapper:
+  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+  	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+  Caused by: java.lang.IllegalArgumentException: Unable to parse job from file Exomiser_Template.yml please check the format.
+  	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:87)
+  	at org.monarchinitiative.exomiser.core.analysis.JobReader.readJob(JobReader.java:74)
+  	at org.monarchinitiative.exomiser.cli.CommandLineJobReader.readJobs(CommandLineJobReader.java:68)
+  	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.run(ExomiserCommandLineRunner.java:55)
+  	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:782)
+  	... 5 common frames omitted
+  Caused by: org.monarchinitiative.exomiser.core.proto.ProtoParser$ProtoParserException: Unable to parse message type org.monarchinitiative.exomiser.api.v1.JobProto$Job from file Exomiser_Template.yml
+  	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:60)
+  	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:81)
+  	... 9 common frames omitted
+  Caused by: com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException: while parsing a block mapping
+   in 'reader', line 6, column 1:
+      analysis:
+      ^
+  expected <block end>, but found '<block mapping start>'
+   in 'reader', line 14, column 5:
+          proband: Proband 
+          ^
+  
+   at [Source: (BufferedReader); line: 12, column: 89]
+  	at com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException.from(MarkedYAMLException.java:28)
+  	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:407)
+  	at com.fasterxml.jackson.core.JsonParser.nextFieldName(JsonParser.java:1038)
+  	at com.fasterxml.jackson.databind.deser.std.BaseNodeDeserializer._deserializeContainerNoRecursion(JsonNodeDeserializer.java:440)
+  	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:84)
+  	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:20)
+  	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+  	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4716)
+  	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3065)
+  	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseYaml(ProtoParser.java:81)
+  	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:56)
+  	... 10 common frames omitted
+  Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+   in 'reader', line 6, column 1:
+      analysis:
+      ^
+  expected <block end>, but found '<block mapping start>'
+   in 'reader', line 14, column 5:
+          proband: Proband 
+          ^
+  
+  	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+  	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+  	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:175)
+  	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:403)
+  	... 19 common frames omitted
+
+Work dir:
+  /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0c/8409b45c74827b9da3635c93a0180f
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Aug-08 13:18:08.366 [main] DEBUG nextflow.Session - Session await > all processes finished
+Aug-08 13:18:08.369 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `SNV:EXOMISER (1)` terminated with an error exit status (1)
+Aug-08 13:18:08.380 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Aug-08 13:18:08.384 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=20; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=40s; cachedDuration=25m 32s;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=8; peakMemory=64 B; ]
+Aug-08 13:18:08.384 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Aug-08 13:18:08.386 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Aug-08 13:18:08.437 [main] DEBUG nextflow.trace.ReportObserver - Execution report summary data:
+  [{"cpuUsage":{"mean":30.64,"min":12.98,"q1":25.64,"q2":38.31,"q3":39.47,"max":40.63,"minLabel":"SNV:FASTQTOSAM (2)","maxLabel":"SNV:FASTQTOSAM (3)","q1Label":"SNV:FASTQTOSAM (2)","q2Label":"SNV:FASTQTOSAM (1)","q3Label":"SNV:FASTQTOSAM (1)"},"process":"FASTQTOSAM","mem":{"mean":5520247466.67,"min":5490655232,"q1":5497868288,"q2":5505081344,"q3":5535043584,"max":5565005824,"minLabel":"SNV:FASTQTOSAM (1)","maxLabel":"SNV:FASTQTOSAM (2)","q1Label":"SNV:FASTQTOSAM (1)","q2Label":"SNV:FASTQTOSAM (3)","q3Label":"SNV:FASTQTOSAM (3)"},"memUsage":{"mean":8625386666.67,"min":8579148800,"q1":8590419200,"q2":8601689600,"q3":8648505600,"max":8695321600,"minLabel":"SNV:FASTQTOSAM (1)","maxLabel":"SNV:FASTQTOSAM (2)","q1Label":"SNV:FASTQTOSAM (1)","q2Label":"SNV:FASTQTOSAM (3)","q3Label":"SNV:FASTQTOSAM (3)"},"timeUsage":null,"vmem":{"mean":6152338090.67,"min":6147432448,"q1":6149195776,"q2":6150959104,"q3":6154790912,"max":6158622720,"minLabel":"SNV:FASTQTOSAM (1)","maxLabel":"SNV:FASTQTOSAM (2)","q1Label":"SNV:FASTQTOSAM (1)","q2Label":"SNV:FASTQTOSAM (3)","q3Label":"SNV:FASTQTOSAM (3)"},"reads":{"mean":5429455867.67,"min":5428224585,"q1":5428497005.5,"q2":5428769426,"q3":5430071509,"max":5431373592,"minLabel":"SNV:FASTQTOSAM (1)","maxLabel":"SNV:FASTQTOSAM (2)","q1Label":"SNV:FASTQTOSAM (1)","q2Label":"SNV:FASTQTOSAM (3)","q3Label":"SNV:FASTQTOSAM (3)"},"cpu":{"mean":245.1,"min":103.8,"q1":205.15,"q2":306.5,"q3":315.75,"max":325,"minLabel":"SNV:FASTQTOSAM (2)","maxLabel":"SNV:FASTQTOSAM (3)","q1Label":"SNV:FASTQTOSAM (2)","q2Label":"SNV:FASTQTOSAM (1)","q3Label":"SNV:FASTQTOSAM (1)"},"time":{"mean":15703,"min":5456,"q1":5461.5,"q2":5467,"q3":20826.5,"max":36186,"minLabel":"SNV:FASTQTOSAM (3)","maxLabel":"SNV:FASTQTOSAM (2)","q1Label":"SNV:FASTQTOSAM (3)","q2Label":"SNV:FASTQTOSAM (1)","q3Label":"SNV:FASTQTOSAM (1)"},"writes":{"mean":36434617.33,"min":24176675,"q1":27445309.5,"q2":30713944,"q3":42563588.5,"max":54413233,"minLabel":"SNV:FASTQTOSAM (1)","maxLabel":"SNV:FASTQTOSAM (2)","q1Label":"SNV:FASTQTOSAM (1)","q2Label":"SNV:FASTQTOSAM (3)","q3Label":"SNV:FASTQTOSAM (3)"}},{"cpuUsage":{"mean":9.47,"min":6.85,"q1":8.68,"q2":10.51,"q3":10.77,"max":11.04,"minLabel":"SNV:SAMTOBAM (2)","maxLabel":"SNV:SAMTOBAM (1)","q1Label":"SNV:SAMTOBAM (2)","q2Label":"SNV:SAMTOBAM (3)","q3Label":"SNV:SAMTOBAM (3)"},"process":"SAMTOBAM","mem":{"mean":5252437.33,"min":3362816,"q1":4780032,"q2":6197248,"q3":6197248,"max":6197248,"minLabel":"SNV:SAMTOBAM (2)","maxLabel":"SNV:SAMTOBAM (3)","q1Label":"SNV:SAMTOBAM (2)","q2Label":"SNV:SAMTOBAM (1)","q3Label":"SNV:SAMTOBAM (1)"},"memUsage":{"mean":8206933.33,"min":5254400,"q1":7468800,"q2":9683200,"q3":9683200,"max":9683200,"minLabel":"SNV:SAMTOBAM (2)","maxLabel":"SNV:SAMTOBAM (3)","q1Label":"SNV:SAMTOBAM (2)","q2Label":"SNV:SAMTOBAM (1)","q3Label":"SNV:SAMTOBAM (1)"},"timeUsage":null,"vmem":{"mean":26610346.67,"min":16236544,"q1":24016896,"q2":31797248,"q3":31797248,"max":31797248,"minLabel":"SNV:SAMTOBAM (2)","maxLabel":"SNV:SAMTOBAM (3)","q1Label":"SNV:SAMTOBAM (2)","q2Label":"SNV:SAMTOBAM (1)","q3Label":"SNV:SAMTOBAM (1)"},"reads":{"mean":36559989.67,"min":24302133,"q1":27570734,"q2":30839335,"q3":42688918,"max":54538501,"minLabel":"SNV:SAMTOBAM (1)","maxLabel":"SNV:SAMTOBAM (3)","q1Label":"SNV:SAMTOBAM (1)","q2Label":"SNV:SAMTOBAM (2)","q3Label":"SNV:SAMTOBAM (2)"},"cpu":{"mean":75.73,"min":54.8,"q1":69.45,"q2":84.1,"q3":86.2,"max":88.3,"minLabel":"SNV:SAMTOBAM (2)","maxLabel":"SNV:SAMTOBAM (1)","q1Label":"SNV:SAMTOBAM (2)","q2Label":"SNV:SAMTOBAM (3)","q3Label":"SNV:SAMTOBAM (3)"},"time":{"mean":618.67,"min":365,"q1":534,"q2":703,"q3":745.5,"max":788,"minLabel":"SNV:SAMTOBAM (1)","maxLabel":"SNV:SAMTOBAM (3)","q1Label":"SNV:SAMTOBAM (1)","q2Label":"SNV:SAMTOBAM (2)","q3Label":"SNV:SAMTOBAM (2)"},"writes":{"mean":6539066,"min":4591428,"q1":5029588,"q2":5467748,"q3":7512885,"max":9558022,"minLabel":"SNV:SAMTOBAM (1)","maxLabel":"SNV:SAMTOBAM (3)","q1Label":"SNV:SAMTOBAM (1)","q2Label":"SNV:SAMTOBAM (2)","q3Label":"SNV:SAMTOBAM (2)"}},{"cpuUsage":{"mean":7.33,"min":0.81,"q1":5.47,"q2":10.13,"q3":10.59,"max":11.06,"minLabel":"SNV:SORTEDBAM (3)","maxLabel":"SNV:SORTEDBAM (1)","q1Label":"SNV:SORTEDBAM (3)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"},"process":"SORTEDBAM","mem":{"mean":40873984,"min":30912512,"q1":30912512,"q2":30912512,"q3":45854720,"max":60796928,"minLabel":"SNV:SORTEDBAM (1)","maxLabel":"SNV:SORTEDBAM (3)","q1Label":"SNV:SORTEDBAM (1)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"},"memUsage":{"mean":63865600,"min":48300800,"q1":48300800,"q2":48300800,"q3":71648000,"max":94995200,"minLabel":"SNV:SORTEDBAM (1)","maxLabel":"SNV:SORTEDBAM (3)","q1Label":"SNV:SORTEDBAM (1)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"},"timeUsage":null,"vmem":{"mean":885238442.67,"min":837525504,"q1":838576128,"q2":839626752,"q3":909094912,"max":978563072,"minLabel":"SNV:SORTEDBAM (2)","maxLabel":"SNV:SORTEDBAM (3)","q1Label":"SNV:SORTEDBAM (2)","q2Label":"SNV:SORTEDBAM (1)","q3Label":"SNV:SORTEDBAM (1)"},"reads":{"mean":6681673.33,"min":4734155,"q1":5172281.5,"q2":5610408,"q3":7655432.5,"max":9700457,"minLabel":"SNV:SORTEDBAM (1)","maxLabel":"SNV:SORTEDBAM (3)","q1Label":"SNV:SORTEDBAM (1)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"},"cpu":{"mean":58.67,"min":6.5,"q1":43.75,"q2":81,"q3":84.75,"max":88.5,"minLabel":"SNV:SORTEDBAM (3)","maxLabel":"SNV:SORTEDBAM (1)","q1Label":"SNV:SORTEDBAM (3)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"},"time":{"mean":3704.67,"min":375,"q1":430,"q2":485,"q3":5369.5,"max":10254,"minLabel":"SNV:SORTEDBAM (1)","maxLabel":"SNV:SORTEDBAM (3)","q1Label":"SNV:SORTEDBAM (1)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"},"writes":{"mean":6362113,"min":4490886,"q1":4907442,"q2":5323998,"q3":7297726.5,"max":9271455,"minLabel":"SNV:SORTEDBAM (1)","maxLabel":"SNV:SORTEDBAM (3)","q1Label":"SNV:SORTEDBAM (1)","q2Label":"SNV:SORTEDBAM (2)","q3Label":"SNV:SORTEDBAM (2)"}},{"cpuUsage":{"mean":6.74,"min":5.36,"q1":6.29,"q2":7.23,"q3":7.43,"max":7.64,"minLabel":"SNV:INDEXEDBAM (3)","maxLabel":"SNV:INDEXEDBAM (1)","q1Label":"SNV:INDEXEDBAM (3)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"process":"INDEXEDBAM","mem":{"mean":7507968,"min":7266304,"q1":7421952,"q2":7577600,"q3":7628800,"max":7680000,"minLabel":"SNV:INDEXEDBAM (1)","maxLabel":"SNV:INDEXEDBAM (3)","q1Label":"SNV:INDEXEDBAM (1)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"memUsage":{"mean":11731200,"min":11353600,"q1":11596800,"q2":11840000,"q3":11920000,"max":12000000,"minLabel":"SNV:INDEXEDBAM (1)","maxLabel":"SNV:INDEXEDBAM (3)","q1Label":"SNV:INDEXEDBAM (1)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"timeUsage":null,"vmem":{"mean":32303786.67,"min":32149504,"q1":32249856,"q2":32350208,"q3":32380928,"max":32411648,"minLabel":"SNV:INDEXEDBAM (1)","maxLabel":"SNV:INDEXEDBAM (3)","q1Label":"SNV:INDEXEDBAM (1)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"reads":{"mean":6504772,"min":4633566,"q1":5050089,"q2":5466612,"q3":7440375,"max":9414138,"minLabel":"SNV:INDEXEDBAM (1)","maxLabel":"SNV:INDEXEDBAM (3)","q1Label":"SNV:INDEXEDBAM (1)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"cpu":{"mean":53.93,"min":42.9,"q1":50.35,"q2":57.8,"q3":59.45,"max":61.1,"minLabel":"SNV:INDEXEDBAM (3)","maxLabel":"SNV:INDEXEDBAM (1)","q1Label":"SNV:INDEXEDBAM (3)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"time":{"mean":134.33,"min":90,"q1":101,"q2":112,"q3":156.5,"max":201,"minLabel":"SNV:INDEXEDBAM (1)","maxLabel":"SNV:INDEXEDBAM (3)","q1Label":"SNV:INDEXEDBAM (1)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"},"writes":{"mean":1281888.67,"min":1107009,"q1":1211328.5,"q2":1315648,"q3":1369328.5,"max":1423009,"minLabel":"SNV:INDEXEDBAM (1)","maxLabel":"SNV:INDEXEDBAM (3)","q1Label":"SNV:INDEXEDBAM (1)","q2Label":"SNV:INDEXEDBAM (2)","q3Label":"SNV:INDEXEDBAM (2)"}},{"cpuUsage":{"mean":25.33,"min":23.35,"q1":23.97,"q2":24.59,"q3":26.31,"max":28.04,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (3)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (2)","q3Label":"SNV:DUPREMOVED (2)"},"process":"DUPREMOVED","mem":{"mean":21318029312,"min":18730180608,"q1":20670519296,"q2":22610857984,"q3":22611953664,"max":22613049344,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (2)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (3)","q3Label":"SNV:DUPREMOVED (3)"},"memUsage":{"mean":33309420800,"min":29265907200,"q1":32297686400,"q2":35329465600,"q3":35331177600,"max":35332889600,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (2)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (3)","q3Label":"SNV:DUPREMOVED (3)"},"timeUsage":null,"vmem":{"mean":79916317354.67,"min":78531067904,"q1":78803187712,"q2":79075307520,"q3":80608942080,"max":82142576640,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (3)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (2)","q3Label":"SNV:DUPREMOVED (2)"},"reads":{"mean":38727678,"min":33052488,"q1":34312909.5,"q2":35573331,"q3":41565273,"max":47557215,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (3)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (2)","q3Label":"SNV:DUPREMOVED (2)"},"cpu":{"mean":202.6,"min":186.8,"q1":191.75,"q2":196.7,"q3":210.5,"max":224.3,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (3)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (2)","q3Label":"SNV:DUPREMOVED (2)"},"time":{"mean":13078.33,"min":11797,"q1":12280.5,"q2":12764,"q3":13719,"max":14674,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (2)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (3)","q3Label":"SNV:DUPREMOVED (3)"},"writes":{"mean":8524551,"min":6418584,"q1":6953470,"q2":7488356,"q3":9577534.5,"max":11666713,"minLabel":"SNV:DUPREMOVED (2)","maxLabel":"SNV:DUPREMOVED (3)","q1Label":"SNV:DUPREMOVED (2)","q2Label":"SNV:DUPREMOVED (2)","q3Label":"SNV:DUPREMOVED (2)"}},{"cpuUsage":{"mean":81.96,"min":76.31,"q1":78.48,"q2":80.65,"q3":84.78,"max":88.91,"minLabel":"SNV:DEEPVARIANT (2)","maxLabel":"SNV:DEEPVARIANT (3)","q1Label":"SNV:DEEPVARIANT (2)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"process":"DEEPVARIANT","mem":{"mean":3280173738.67,"min":3257028608,"q1":3262914560,"q2":3268800512,"q3":3291746304,"max":3314692096,"minLabel":"SNV:DEEPVARIANT (2)","maxLabel":"SNV:DEEPVARIANT (3)","q1Label":"SNV:DEEPVARIANT (2)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"memUsage":{"mean":5125271466.67,"min":5089107200,"q1":5098304000,"q2":5107500800,"q3":5143353600,"max":5179206400,"minLabel":"SNV:DEEPVARIANT (2)","maxLabel":"SNV:DEEPVARIANT (3)","q1Label":"SNV:DEEPVARIANT (2)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"timeUsage":null,"vmem":{"mean":31287772501.33,"min":29052223488,"q1":29052278784,"q2":29052334080,"q3":32405547008,"max":35758759936,"minLabel":"SNV:DEEPVARIANT (3)","maxLabel":"SNV:DEEPVARIANT (2)","q1Label":"SNV:DEEPVARIANT (3)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"reads":{"mean":993509202,"min":972167587,"q1":977149180,"q2":982130773,"q3":1004180009.5,"max":1026229246,"minLabel":"SNV:DEEPVARIANT (2)","maxLabel":"SNV:DEEPVARIANT (3)","q1Label":"SNV:DEEPVARIANT (2)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"cpu":{"mean":655.67,"min":610.5,"q1":627.85,"q2":645.2,"q3":678.25,"max":711.3,"minLabel":"SNV:DEEPVARIANT (2)","maxLabel":"SNV:DEEPVARIANT (3)","q1Label":"SNV:DEEPVARIANT (2)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"time":{"mean":30217,"min":28592,"q1":29061.5,"q2":29531,"q3":31029.5,"max":32528,"minLabel":"SNV:DEEPVARIANT (3)","maxLabel":"SNV:DEEPVARIANT (2)","q1Label":"SNV:DEEPVARIANT (3)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"},"writes":{"mean":301691139,"min":300392388,"q1":300481328.5,"q2":300570269,"q3":302340514.5,"max":304110760,"minLabel":"SNV:DEEPVARIANT (2)","maxLabel":"SNV:DEEPVARIANT (3)","q1Label":"SNV:DEEPVARIANT (2)","q2Label":"SNV:DEEPVARIANT (3)","q3Label":"SNV:DEEPVARIANT (3)"}},{"cpuUsage":{"mean":22.04,"min":22.04,"q1":22.04,"q2":22.04,"q3":22.04,"max":22.04,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"process":"GLNEXUS","mem":{"mean":23273472,"min":23273472,"q1":23273472,"q2":23273472,"q3":23273472,"max":23273472,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"memUsage":{"mean":36364800,"min":36364800,"q1":36364800,"q2":36364800,"q3":36364800,"max":36364800,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"timeUsage":null,"vmem":{"mean":11110932480,"min":11110932480,"q1":11110932480,"q2":11110932480,"q3":11110932480,"max":11110932480,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"reads":{"mean":17467600,"min":17467600,"q1":17467600,"q2":17467600,"q3":17467600,"max":17467600,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"cpu":{"mean":176.3,"min":176.3,"q1":176.3,"q2":176.3,"q3":176.3,"max":176.3,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"time":{"mean":1064,"min":1064,"q1":1064,"q2":1064,"q3":1064,"max":1064,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"},"writes":{"mean":2894268,"min":2894268,"q1":2894268,"q2":2894268,"q3":2894268,"max":2894268,"minLabel":"SNV:GLNEXUS (1)","maxLabel":"SNV:GLNEXUS (1)","q1Label":"SNV:GLNEXUS (1)","q2Label":"SNV:GLNEXUS (1)","q3Label":"SNV:GLNEXUS (1)"}},{"cpuUsage":{"mean":136,"min":136,"q1":136,"q2":136,"q3":136,"max":136,"minLabel":"SNV:GLNEXUS2 (1)","maxLabel":"SNV:GLNEXUS2 (1)","q1Label":"SNV:GLNEXUS2 (1)","q2Label":"SNV:GLNEXUS2 (1)","q3Label":"SNV:GLNEXUS2 (1)"},"process":"GLNEXUS2","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":{"mean":365805,"min":365805,"q1":365805,"q2":365805,"q3":365805,"max":365805,"minLabel":"SNV:GLNEXUS2 (1)","maxLabel":"SNV:GLNEXUS2 (1)","q1Label":"SNV:GLNEXUS2 (1)","q2Label":"SNV:GLNEXUS2 (1)","q3Label":"SNV:GLNEXUS2 (1)"},"cpu":{"mean":1088,"min":1088,"q1":1088,"q2":1088,"q3":1088,"max":1088,"minLabel":"SNV:GLNEXUS2 (1)","maxLabel":"SNV:GLNEXUS2 (1)","q1Label":"SNV:GLNEXUS2 (1)","q2Label":"SNV:GLNEXUS2 (1)","q3Label":"SNV:GLNEXUS2 (1)"},"time":{"mean":38,"min":38,"q1":38,"q2":38,"q3":38,"max":38,"minLabel":"SNV:GLNEXUS2 (1)","maxLabel":"SNV:GLNEXUS2 (1)","q1Label":"SNV:GLNEXUS2 (1)","q2Label":"SNV:GLNEXUS2 (1)","q3Label":"SNV:GLNEXUS2 (1)"},"writes":{"mean":193263,"min":193263,"q1":193263,"q2":193263,"q3":193263,"max":193263,"minLabel":"SNV:GLNEXUS2 (1)","maxLabel":"SNV:GLNEXUS2 (1)","q1Label":"SNV:GLNEXUS2 (1)","q2Label":"SNV:GLNEXUS2 (1)","q3Label":"SNV:GLNEXUS2 (1)"}},{"cpuUsage":null,"process":"EXOMISER","mem":null,"memUsage":null,"timeUsage":null,"vmem":null,"reads":null,"cpu":null,"time":{"mean":5000,"min":5000,"q1":5000,"q2":5000,"q3":5000,"max":5000,"minLabel":"SNV:EXOMISER (1)","maxLabel":"SNV:EXOMISER (1)","q1Label":"SNV:EXOMISER (1)","q2Label":"SNV:EXOMISER (1)","q3Label":"SNV:EXOMISER (1)"},"writes":null}]
+Aug-08 13:18:09.166 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Aug-08 13:18:09.347 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Aug-08 13:18:09.380 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

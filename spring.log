@@ -1,0 +1,590 @@
+2023-08-08 07:41:21.689  INFO 1461250 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1461250 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/a2/4840c000465614e8d76fa350560eb0)
+2023-08-08 07:41:21.702  INFO 1461250 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 07:41:23.401  INFO 1461250 --- [main] o.m.exomiser.cli.config.MainConfig       : Exomiser home: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0
+2023-08-08 07:41:23.409  INFO 1461250 --- [main] o.m.exomiser.cli.config.MainConfig       : Root data source directory set to: /mnt/common/Precision/Exomiser/data
+2023-08-08 07:41:23.413  INFO 1461250 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialising Jannovar data from /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_transcripts_ensembl.ser
+2023-08-08 07:41:26.250  INFO 1461250 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialisation took 2.836 sec.
+2023-08-08 07:41:27.121  INFO 1461250 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loading variant whitelist from: /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_clinvar_whitelist.tsv.gz
+2023-08-08 07:41:27.409  INFO 1461250 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loaded 145594 variants into whitelist
+2023-08-08 07:41:27.476  INFO 1461250 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD snv data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/whole_genome_SNVs.tsv.gz
+2023-08-08 07:41:27.923  INFO 1461250 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD InDel data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/gnomad.genomes.r3.0.indel.tsv.gz
+2023-08-08 07:41:29.227  INFO 1461250 --- [main] g.GenomeAnalysisServiceAutoConfiguration : Configured hg38 genome analysis service
+2023-08-08 07:41:48.484  INFO 1461250 --- [main] o.m.exomiser.cli.config.MainConfig       : Default results directory set to: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/results
+2023-08-08 07:41:48.497  INFO 1461250 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.data-directory: /mnt/common/Precision/Exomiser/data/
+2023-08-08 07:41:48.497  INFO 1461250 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg19.data-version: -
+2023-08-08 07:41:48.497  INFO 1461250 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg38.data-version: 2209
+2023-08-08 07:41:48.498  INFO 1461250 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.phenotype.data-version: 2209
+2023-08-08 07:41:48.857  INFO 1461250 --- [main] org.monarchinitiative.exomiser.cli.Main  : Started Main in 28.736 seconds (JVM running for 30.953)
+2023-08-08 07:41:49.697  INFO 1461250 --- [main] o.m.e.cli.ExomiserCommandLineRunner      : Exomiser running...
+2023-08-08 07:41:49.732  INFO 1461250 --- [main] o.m.exomiser.core.Exomiser               : Running analysis using hg38 assembly with mode: PASS_ONLY
+2023-08-08 07:41:49.735  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Starting analysis
+2023-08-08 07:41:49.735  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Using genome assembly hg38
+2023-08-08 07:41:49.735  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Checking proband and pedigree for VCF /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/6.merged.vcf.gz
+2023-08-08 07:41:49.890 ERROR 1461250 --- [main] o.m.exomiser.core.genome.VcfFiles        : Unable to read VCF sample identifiers from file /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/6.merged.vcf.gz
+2023-08-08 07:41:49.900  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Running analysis for proband Proband (sample 1 in VCF) from samples: []
+2023-08-08 07:41:50.421  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Filtering variants with:
+2023-08-08 07:41:50.422  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : VariantEffectFilter{offTargetVariantTypes=[CODING_TRANSCRIPT_INTRON_VARIANT, FIVE_PRIME_UTR_EXON_VARIANT, THREE_PRIME_UTR_EXON_VARIANT, FIVE_PRIME_UTR_INTRON_VARIANT, THREE_PRIME_UTR_INTRON_VARIANT, NON_CODING_TRANSCRIPT_EXON_VARIANT, NON_CODING_TRANSCRIPT_INTRON_VARIANT, UPSTREAM_GENE_VARIANT, DOWNSTREAM_GENE_VARIANT, INTERGENIC_VARIANT, REGULATORY_REGION_VARIANT]}
+2023-08-08 07:41:50.422  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : FrequencyFilter{maxFreq=2.0}
+2023-08-08 07:41:50.423  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Wrapping FrequencyFilter{maxFreq=2.0} with VariantDataProvider for sources [THOUSAND_GENOMES, TOPMED, UK10K, ESP_AFRICAN_AMERICAN, ESP_EUROPEAN_AMERICAN, ESP_ALL, EXAC_AFRICAN_INC_AFRICAN_AMERICAN, EXAC_AMERICAN, EXAC_EAST_ASIAN, EXAC_FINNISH, EXAC_NON_FINNISH_EUROPEAN, EXAC_OTHER, EXAC_SOUTH_ASIAN, GNOMAD_E_AFR, GNOMAD_E_AMR, GNOMAD_E_ASJ, GNOMAD_E_EAS, GNOMAD_E_FIN, GNOMAD_E_NFE, GNOMAD_E_OTH, GNOMAD_E_SAS, GNOMAD_G_AFR, GNOMAD_G_AMR, GNOMAD_G_ASJ, GNOMAD_G_EAS, GNOMAD_G_FIN, GNOMAD_G_NFE, GNOMAD_G_OTH, GNOMAD_G_SAS]
+2023-08-08 07:41:50.424  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : PathogenicityFilter{keepNonPathogenic=true}
+2023-08-08 07:41:50.424  INFO 1461250 --- [main] o.m.e.c.analysis.AbstractAnalysisRunner  : Wrapping PathogenicityFilter{keepNonPathogenic=true} with VariantDataProvider for sources [POLYPHEN, MUTATION_TASTER, SIFT, CADD]
+2023-08-08 07:41:50.424  INFO 1461250 --- [main] o.m.e.core.genome.VariantFactoryImpl     : Annotating variant records, trimming sequences and normalising positions...
+2023-08-08 07:41:50.427  INFO 1461250 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 07:41:50.511 ERROR 1461250 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:785)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: htsjdk.tribble.TribbleException$MalformedFeatureFile: Unable to parse header with error: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/6.merged.vcf.gz, for input source: file:///mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/6.merged.vcf.gz
+	at htsjdk.tribble.TribbleIndexedFeatureReader.readHeader(TribbleIndexedFeatureReader.java:263)
+	at htsjdk.tribble.TribbleIndexedFeatureReader.<init>(TribbleIndexedFeatureReader.java:102)
+	at htsjdk.tribble.TribbleIndexedFeatureReader.<init>(TribbleIndexedFeatureReader.java:127)
+	at htsjdk.tribble.AbstractFeatureReader.getFeatureReader(AbstractFeatureReader.java:121)
+	at htsjdk.tribble.AbstractFeatureReader.getFeatureReader(AbstractFeatureReader.java:81)
+	at htsjdk.variant.vcf.VCFFileReader.<init>(VCFFileReader.java:145)
+	at org.monarchinitiative.exomiser.core.genome.VcfFiles.readVariantContexts(VcfFiles.java:57)
+	at org.monarchinitiative.exomiser.core.genome.VcfFileReader.readVariantContexts(VcfFileReader.java:52)
+	at org.monarchinitiative.exomiser.core.genome.VariantFactoryImpl.createVariantEvaluations(VariantFactoryImpl.java:84)
+	at org.monarchinitiative.exomiser.core.analysis.AbstractAnalysisRunner.loadAndFilterVariants(AbstractAnalysisRunner.java:193)
+	at org.monarchinitiative.exomiser.core.analysis.AbstractAnalysisRunner.run(AbstractAnalysisRunner.java:111)
+	at org.monarchinitiative.exomiser.core.Exomiser.run(Exomiser.java:83)
+	at org.monarchinitiative.exomiser.core.Exomiser.run(Exomiser.java:69)
+	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.runJob(ExomiserCommandLineRunner.java:79)
+	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.runJobs(ExomiserCommandLineRunner.java:62)
+	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.run(ExomiserCommandLineRunner.java:57)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:782)
+	... 5 common frames omitted
+Caused by: java.nio.file.NoSuchFileException: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/test/6.merged.vcf.gz
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at htsjdk.samtools.seekablestream.SeekablePathStream.<init>(SeekablePathStream.java:39)
+	at htsjdk.tribble.util.ParsingUtils.openInputStream(ParsingUtils.java:107)
+	at htsjdk.tribble.TribbleIndexedFeatureReader.readHeader(TribbleIndexedFeatureReader.java:253)
+	... 21 common frames omitted
+
+2023-08-08 12:06:21.268  INFO 1536308 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1536308 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/c0/094ab8556317e6098908faf3969c3c)
+2023-08-08 12:06:21.309  INFO 1536308 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 12:06:22.676  WARN 1536308 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiserCommandLineRunner' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar!/org/monarchinitiative/exomiser/cli/ExomiserCommandLineRunner.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+2023-08-08 12:06:22.683  INFO 1536308 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 12:06:22.735 ERROR 1536308 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiserCommandLineRunner' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar!/org/monarchinitiative/exomiser/cli/ExomiserCommandLineRunner.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:420)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 32 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 46 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 60 common frames omitted
+Caused by: java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration.genomeAnalysisServiceProvider(GenomeAnalysisServiceAutoConfiguration.java:52)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$f588967e.CGLIB$genomeAnalysisServiceProvider$0(<generated>)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$f588967e$$FastClassBySpringCGLIB$$67387aca.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$f588967e.genomeAnalysisServiceProvider(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 61 common frames omitted
+
+2023-08-08 12:28:06.087  INFO 1548753 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1548753 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/f3/7b1b86cc0cece45585ef8708ebbe72)
+2023-08-08 12:28:06.092  INFO 1548753 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 12:28:06.594  WARN 1548753 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiserCommandLineRunner' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar!/org/monarchinitiative/exomiser/cli/ExomiserCommandLineRunner.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+2023-08-08 12:28:06.601  INFO 1548753 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 12:28:06.615 ERROR 1548753 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiserCommandLineRunner' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar!/org/monarchinitiative/exomiser/cli/ExomiserCommandLineRunner.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:420)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 32 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 46 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 60 common frames omitted
+Caused by: java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration.genomeAnalysisServiceProvider(GenomeAnalysisServiceAutoConfiguration.java:52)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$9bb2742f.CGLIB$genomeAnalysisServiceProvider$0(<generated>)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$9bb2742f$$FastClassBySpringCGLIB$$b8720e3a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$9bb2742f.genomeAnalysisServiceProvider(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 61 common frames omitted
+
+2023-08-08 13:08:31.750  INFO 1551991 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1551991 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/85/ac11bf517827e89bfa8867e13a3132)
+2023-08-08 13:08:31.760  INFO 1551991 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 13:08:32.261  WARN 1551991 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiserCommandLineRunner' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar!/org/monarchinitiative/exomiser/cli/ExomiserCommandLineRunner.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+2023-08-08 13:08:32.268  INFO 1551991 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 13:08:32.282 ERROR 1551991 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiserCommandLineRunner' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar!/org/monarchinitiative/exomiser/cli/ExomiserCommandLineRunner.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:420)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exomiser' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/Exomiser.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'analysisFactory' defined in URL [jar:file:/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/lib/exomiser-core-13.1.0.jar!/org/monarchinitiative/exomiser/core/analysis/AnalysisFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 32 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'genomeAnalysisServiceProvider' defined in class path resource [org/monarchinitiative/exomiser/autoconfigure/genome/GenomeAnalysisServiceAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 46 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.monarchinitiative.exomiser.core.genome.GenomeAnalysisServiceProvider]: Factory method 'genomeAnalysisServiceProvider' threw exception; nested exception is java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 60 common frames omitted
+Caused by: java.lang.IllegalStateException: No org.monarchinitiative.exomiser.core.genome.GenomeAnalysisService instance provided! You must specify at least one exomiser genome assembly data version in the application.properties file.
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration.genomeAnalysisServiceProvider(GenomeAnalysisServiceAutoConfiguration.java:52)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$9bb2742f.CGLIB$genomeAnalysisServiceProvider$0(<generated>)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$9bb2742f$$FastClassBySpringCGLIB$$b8720e3a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.monarchinitiative.exomiser.autoconfigure.genome.GenomeAnalysisServiceAutoConfiguration$$EnhancerBySpringCGLIB$$9bb2742f.genomeAnalysisServiceProvider(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 61 common frames omitted
+
+2023-08-08 13:15:08.389  INFO 1564478 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1564478 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/b3/47a1e4ba7e92f1a0a479795164cf94)
+2023-08-08 13:15:08.393  INFO 1564478 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 13:15:08.974  INFO 1564478 --- [main] o.m.exomiser.cli.config.MainConfig       : Exomiser home: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0
+2023-08-08 13:15:08.982  INFO 1564478 --- [main] o.m.exomiser.cli.config.MainConfig       : Root data source directory set to: /mnt/common/Precision/Exomiser/data
+2023-08-08 13:15:09.025  INFO 1564478 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialising Jannovar data from /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_transcripts_ensembl.ser
+2023-08-08 13:15:11.822  INFO 1564478 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialisation took 2.791 sec.
+2023-08-08 13:15:13.133  INFO 1564478 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loading variant whitelist from: /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_clinvar_whitelist.tsv.gz
+2023-08-08 13:15:13.405  INFO 1564478 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loaded 145594 variants into whitelist
+2023-08-08 13:15:13.490  INFO 1564478 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD snv data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/whole_genome_SNVs.tsv.gz
+2023-08-08 13:15:14.033  INFO 1564478 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD InDel data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/gnomad.genomes.r3.0.indel.tsv.gz
+2023-08-08 13:15:15.423  INFO 1564478 --- [main] g.GenomeAnalysisServiceAutoConfiguration : Configured hg38 genome analysis service
+2023-08-08 13:15:35.881  INFO 1564478 --- [main] o.m.exomiser.cli.config.MainConfig       : Default results directory set to: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/results
+2023-08-08 13:15:35.895  INFO 1564478 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.data-directory: /mnt/common/Precision/Exomiser/data/
+2023-08-08 13:15:35.895  INFO 1564478 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg19.data-version: -
+2023-08-08 13:15:35.895  INFO 1564478 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg38.data-version: 2209
+2023-08-08 13:15:35.895  INFO 1564478 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.phenotype.data-version: 2209
+2023-08-08 13:15:36.273  INFO 1564478 --- [main] org.monarchinitiative.exomiser.cli.Main  : Started Main in 28.237 seconds (JVM running for 28.479)
+2023-08-08 13:15:37.053  INFO 1564478 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 13:15:37.065 ERROR 1564478 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:785)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: java.lang.IllegalArgumentException: Unable to parse job from file Exomiser_Template.yml please check the format.
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:87)
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.readJob(JobReader.java:74)
+	at org.monarchinitiative.exomiser.cli.CommandLineJobReader.readJobs(CommandLineJobReader.java:68)
+	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.run(ExomiserCommandLineRunner.java:55)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:782)
+	... 5 common frames omitted
+Caused by: org.monarchinitiative.exomiser.core.proto.ProtoParser$ProtoParserException: Unable to parse message type org.monarchinitiative.exomiser.api.v1.JobProto$Job from file Exomiser_Template.yml
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:60)
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:81)
+	... 9 common frames omitted
+Caused by: com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException: while parsing a block mapping
+ in 'reader', line 6, column 1:
+    analysis:
+    ^
+expected <block end>, but found '<block mapping start>'
+ in 'reader', line 12, column 5:
+        proband: Proband 
+        ^
+
+ at [Source: (BufferedReader); line: 10, column: 89]
+	at com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException.from(MarkedYAMLException.java:28)
+	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:407)
+	at com.fasterxml.jackson.core.JsonParser.nextFieldName(JsonParser.java:1038)
+	at com.fasterxml.jackson.databind.deser.std.BaseNodeDeserializer._deserializeContainerNoRecursion(JsonNodeDeserializer.java:440)
+	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:84)
+	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:20)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4716)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3065)
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseYaml(ProtoParser.java:81)
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:56)
+	... 10 common frames omitted
+Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 6, column 1:
+    analysis:
+    ^
+expected <block end>, but found '<block mapping start>'
+ in 'reader', line 12, column 5:
+        proband: Proband 
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:175)
+	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:403)
+	... 19 common frames omitted
+
+2023-08-08 13:18:00.619  INFO 1565718 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1565718 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/0c/8409b45c74827b9da3635c93a0180f)
+2023-08-08 13:18:00.624  INFO 1565718 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 13:18:01.189  INFO 1565718 --- [main] o.m.exomiser.cli.config.MainConfig       : Exomiser home: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0
+2023-08-08 13:18:01.197  INFO 1565718 --- [main] o.m.exomiser.cli.config.MainConfig       : Root data source directory set to: /mnt/common/Precision/Exomiser/data
+2023-08-08 13:18:01.201  INFO 1565718 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialising Jannovar data from /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_transcripts_ensembl.ser
+2023-08-08 13:18:02.516  INFO 1565718 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialisation took 1.314 sec.
+2023-08-08 13:18:02.998  INFO 1565718 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loading variant whitelist from: /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_clinvar_whitelist.tsv.gz
+2023-08-08 13:18:03.229  INFO 1565718 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loaded 145594 variants into whitelist
+2023-08-08 13:18:03.318  INFO 1565718 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD snv data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/whole_genome_SNVs.tsv.gz
+2023-08-08 13:18:03.436  INFO 1565718 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD InDel data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/gnomad.genomes.r3.0.indel.tsv.gz
+2023-08-08 13:18:03.936  INFO 1565718 --- [main] g.GenomeAnalysisServiceAutoConfiguration : Configured hg38 genome analysis service
+2023-08-08 13:18:05.000  INFO 1565718 --- [main] o.m.exomiser.cli.config.MainConfig       : Default results directory set to: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/results
+2023-08-08 13:18:05.014  INFO 1565718 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.data-directory: /mnt/common/Precision/Exomiser/data/
+2023-08-08 13:18:05.015  INFO 1565718 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg19.data-version: -
+2023-08-08 13:18:05.015  INFO 1565718 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg38.data-version: 2209
+2023-08-08 13:18:05.015  INFO 1565718 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.phenotype.data-version: 2209
+2023-08-08 13:18:05.128  INFO 1565718 --- [main] org.monarchinitiative.exomiser.cli.Main  : Started Main in 4.842 seconds (JVM running for 5.086)
+2023-08-08 13:18:05.272  INFO 1565718 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 13:18:05.285 ERROR 1565718 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:785)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: java.lang.IllegalArgumentException: Unable to parse job from file Exomiser_Template.yml please check the format.
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:87)
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.readJob(JobReader.java:74)
+	at org.monarchinitiative.exomiser.cli.CommandLineJobReader.readJobs(CommandLineJobReader.java:68)
+	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.run(ExomiserCommandLineRunner.java:55)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:782)
+	... 5 common frames omitted
+Caused by: org.monarchinitiative.exomiser.core.proto.ProtoParser$ProtoParserException: Unable to parse message type org.monarchinitiative.exomiser.api.v1.JobProto$Job from file Exomiser_Template.yml
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:60)
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:81)
+	... 9 common frames omitted
+Caused by: com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException: while parsing a block mapping
+ in 'reader', line 6, column 1:
+    analysis:
+    ^
+expected <block end>, but found '<block mapping start>'
+ in 'reader', line 14, column 5:
+        proband: Proband 
+        ^
+
+ at [Source: (BufferedReader); line: 12, column: 89]
+	at com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException.from(MarkedYAMLException.java:28)
+	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:407)
+	at com.fasterxml.jackson.core.JsonParser.nextFieldName(JsonParser.java:1038)
+	at com.fasterxml.jackson.databind.deser.std.BaseNodeDeserializer._deserializeContainerNoRecursion(JsonNodeDeserializer.java:440)
+	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:84)
+	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:20)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4716)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3065)
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseYaml(ProtoParser.java:81)
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:56)
+	... 10 common frames omitted
+Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 6, column 1:
+    analysis:
+    ^
+expected <block end>, but found '<block mapping start>'
+ in 'reader', line 14, column 5:
+        proband: Proband 
+        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:175)
+	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:403)
+	... 19 common frames omitted
+
+2023-08-08 13:28:49.738  INFO 1569931 --- [main] org.monarchinitiative.exomiser.cli.Main  : Starting Main using Java 20.0.1 on gpcc-node11 with PID 1569931 (/mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/exomiser-cli-13.1.0.jar started by kiana.rashidi in /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/work/fa/e5ba24ae4ef852dc51d0918dc660b8)
+2023-08-08 13:28:49.742  INFO 1569931 --- [main] org.monarchinitiative.exomiser.cli.Main  : No active profile set, falling back to 1 default profile: "default"
+2023-08-08 13:28:50.318  INFO 1569931 --- [main] o.m.exomiser.cli.config.MainConfig       : Exomiser home: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0
+2023-08-08 13:28:50.326  INFO 1569931 --- [main] o.m.exomiser.cli.config.MainConfig       : Root data source directory set to: /mnt/common/Precision/Exomiser/data
+2023-08-08 13:28:50.329  INFO 1569931 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialising Jannovar data from /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_transcripts_ensembl.ser
+2023-08-08 13:28:51.574  INFO 1569931 --- [main] o.m.e.c.g.j.JannovarDataProtoSerialiser  : Deserialisation took 1.243 sec.
+2023-08-08 13:28:52.010  INFO 1569931 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loading variant whitelist from: /mnt/common/Precision/Exomiser/data/2209_hg38/2209_hg38_clinvar_whitelist.tsv.gz
+2023-08-08 13:28:52.236  INFO 1569931 --- [main] o.m.e.c.g.dao.VariantWhiteListLoader     : Loaded 145594 variants into whitelist
+2023-08-08 13:28:52.299  INFO 1569931 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD snv data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/whole_genome_SNVs.tsv.gz
+2023-08-08 13:28:52.398  INFO 1569931 --- [main] o.m.e.a.genome.GenomeDataSourceLoader    : Opening CADD InDel data from source: /mnt/common/DATABASES/REFERENCES/GRCh38/CADD/V1.6/gnomad.genomes.r3.0.indel.tsv.gz
+2023-08-08 13:28:52.872  INFO 1569931 --- [main] g.GenomeAnalysisServiceAutoConfiguration : Configured hg38 genome analysis service
+2023-08-08 13:28:53.863  INFO 1569931 --- [main] o.m.exomiser.cli.config.MainConfig       : Default results directory set to: /mnt/common/Precision/Exomiser/exomiser-cli-13.1.0/results
+2023-08-08 13:28:53.875  INFO 1569931 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.data-directory: /mnt/common/Precision/Exomiser/data/
+2023-08-08 13:28:53.876  INFO 1569931 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg19.data-version: -
+2023-08-08 13:28:53.876  INFO 1569931 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.hg38.data-version: 2209
+2023-08-08 13:28:53.876  INFO 1569931 --- [main] o.m.e.a.ExomiserConfigReporter           : exomiser.phenotype.data-version: 2209
+2023-08-08 13:28:53.981  INFO 1569931 --- [main] org.monarchinitiative.exomiser.cli.Main  : Started Main in 5.141 seconds (JVM running for 5.397)
+2023-08-08 13:28:54.115  INFO 1569931 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-08-08 13:28:54.127 ERROR 1569931 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:785)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:766)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.monarchinitiative.exomiser.cli.Main.main(Main.java:53)
+Caused by: java.lang.IllegalArgumentException: Unable to parse job from file Exomiser_Template.yml please check the format.
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:87)
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.readJob(JobReader.java:74)
+	at org.monarchinitiative.exomiser.cli.CommandLineJobReader.readJobs(CommandLineJobReader.java:68)
+	at org.monarchinitiative.exomiser.cli.ExomiserCommandLineRunner.run(ExomiserCommandLineRunner.java:55)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:782)
+	... 5 common frames omitted
+Caused by: org.monarchinitiative.exomiser.core.proto.ProtoParser$ProtoParserException: Unable to parse message type org.monarchinitiative.exomiser.api.v1.JobProto$Job from file Exomiser_Template.yml
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:60)
+	at org.monarchinitiative.exomiser.core.analysis.JobReader.parseJob(JobReader.java:81)
+	... 9 common frames omitted
+Caused by: com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException: while parsing a block mapping
+ in 'reader', line 6, column 1:
+    analysis:
+    ^
+expected <block end>, but found ':'
+ in 'reader', line 8, column 21:
+    '    'genomeAssembly: hg38
+                        ^
+
+ at [Source: (BufferedReader); line: 8, column: 21]
+	at com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException.from(MarkedYAMLException.java:28)
+	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:407)
+	at com.fasterxml.jackson.core.JsonParser.nextFieldName(JsonParser.java:1038)
+	at com.fasterxml.jackson.databind.deser.std.BaseNodeDeserializer._deserializeContainerNoRecursion(JsonNodeDeserializer.java:440)
+	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:84)
+	at com.fasterxml.jackson.databind.deser.std.JsonNodeDeserializer.deserialize(JsonNodeDeserializer.java:20)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:4716)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3065)
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseYaml(ProtoParser.java:81)
+	at org.monarchinitiative.exomiser.core.proto.ProtoParser.parseFromJsonOrYaml(ProtoParser.java:56)
+	... 10 common frames omitted
+Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 6, column 1:
+    analysis:
+    ^
+expected <block end>, but found ':'
+ in 'reader', line 8, column 21:
+    '    'genomeAssembly: hg38
+                        ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:649)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:165)
+	at org.yaml.snakeyaml.parser.ParserImpl.getEvent(ParserImpl.java:175)
+	at com.fasterxml.jackson.dataformat.yaml.YAMLParser.nextToken(YAMLParser.java:403)
+	... 19 common frames omitted
+
