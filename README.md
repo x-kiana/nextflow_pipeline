@@ -41,6 +41,14 @@ To run the pipeline using the test files, follow the following steps:
   * Since the test window provided is very small and around the variant of interest, you should see the gene ABCD1 listed as the top candidate, with the variant specifically at X-153736390-C-T. Other variants in genes ATP2B3 and PDZD4 will be listed, but these have very low scores and are only listed due to the very limited testing region.
 * If all above steps work, you're ready to use this on your own data! Make sure to read the notes below before you move on.
 *  If you ran into any problems, you can open an issue, and I'll do my best to help you debug. 
+## Sample Sheet Example
+| FamilyID | Family Member (Proband, Mother, Father, Sibling) | SampleID  | PaternalID | MaternalID | Sex (1=male, 2=female, 0=unknown) | Affected (1=unaffected, 2=affected) | FastqR1 (Path)   | FastqR2 (Path)   | HPO terms (0 for NA) |
+|----------|--------------------------------------------------|-----------|------------|------------|-----------------------------------|-------------------------------------|------------------|------------------|----------------------------|
+| 6        | Proband                                          | 6_Proband | 6_Father   | 6_Mother   | 1                                 | 2                                   | path/to/r1.fastq | path/to/r2.fastq | ['HP:0123456', 'HP:6543210'] | 
+|----------|--------------------------------------------------|-----------|------------|------------|-----------------------------------|-------------------------------------|------------------|------------------|----------------------------|
+| 6        | Mother                                           | 6_Mother  | 0          | 0          | 2                                 | 1                                   | path/to/r1.fastq | path/to/r2.fastq | 0                          |
+|----------|--------------------------------------------------|-----------|------------|------------|-----------------------------------|-------------------------------------|------------------|------------------|----------------------------|
+| 6        | Father                                           | 6_Father  | 0          | 0          | 1                                 | 1                                   | path/to/r1.fastq | path/to/r2.fast1 | 0                          |
 ## Notes
 * If you are using a different job scheduler than slurm, you would need to create a separate profile for it in the profiles section. You can find more info on this in the nextflow documentation.
 * To run the pipeline on full genome data, remove the --regions tag in the modules/deepvariant.nf script. This will be determined using a conditional in later versions, but editing is necessary for current version (0.0.2)

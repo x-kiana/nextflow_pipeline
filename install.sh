@@ -88,4 +88,12 @@ bwa index GRCh38-lite.fa
 
 ## Pull databases
 ## Pull exomiser
-## call all functions in main
+
+get_java
+get_nextflow
+get_miniconda
+load_singularity
+get_deepvariant
+get_glnexus
+activate_conda
+get_refgenome

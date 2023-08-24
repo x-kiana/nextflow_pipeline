@@ -3,11 +3,6 @@
 # your own set-up.
 # add to exomiser.nf as flags
 ---
-genomeAssembly: hg38
-vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/6.merged.vcf.gz
-ped: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6.ped
-proband: Proband 
-hpoIds: ['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
 analysis:
     # hg19 or hg38 - ensure that the application has been configured to run the specified assembly otherwise it will halt.
     # These are the default settings, with values representing the maximum minor allele frequency in percent (%) permitted for an
@@ -15,6 +10,11 @@ analysis:
     # If you just want to analyse a sample under a single inheritance mode, delete/comment-out the others. For AUTOSOMAL_RECESSIVE
     # or X_RECESSIVE ensure *both* relevant HOM_ALT and COMP_HET modes are present.
     # In cases where you do not want any cut-offs applied an empty map should be used e.g. inheritanceModes: {}
+    genomeAssembly: hg38
+    vcf: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/6.merged.vcf.gz
+    ped: /mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6.ped
+    proband: 6_test_Proband 
+    hpoIds: ['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
     inheritanceModes: {
             AUTOSOMAL_DOMINANT: 0.1,
             AUTOSOMAL_RECESSIVE_HOM_ALT: 0.1,

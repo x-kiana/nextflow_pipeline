@@ -6,7 +6,7 @@ NR == 1 {
 {
     outfile = $1 ".ped"
     if (!seen[$1]++) {
-        print header > outfile
+        print "#" header > outfile
     }
     print > outfile
 }

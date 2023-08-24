@@ -1,4 +1,4 @@
-FamilyID	SampleID	PaternalID	MaternalID	"Sex (1=male,2=female,0=unk)"	"Affected (1=unaffected,2=affected)"
-6_test	Proband_6	Father_6	Mother_6	1	2
-6_test	Mother_6	0	0	2	1
-6_test	Father_6	0	0	1	1
+FamilyID	SampleID	PaternalID	MaternalID	Sex	Affected	"HPO terms (comma-sep list, 0 for NA)"
+6_test	Proband_6	Father_6	Mother_6	1	2	['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
+6_test	Mother_6	0	0	2	1	0
+6_test	Father_6	0	0	1	1	0

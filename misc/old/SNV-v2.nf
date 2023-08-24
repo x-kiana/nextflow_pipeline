@@ -7,8 +7,8 @@ include { INDEXEDBAM } from "../modules/indexed_bam.nf"
 include { DUPREMOVED } from "../modules/dupremoved.nf"
 include { DEEPVARIANT } from "../modules/deepvariant.nf"
 include { GLNEXUS } from "../modules/glnexus.nf"
-include { GLNEXUS2 } from "../modules/glnexus-2_test.nf"
-include { EXOMISER } from "../modules/exomiser_test.nf"
+include { GLNEXUS2 } from "../modules/glnexus-2.nf"
+include { EXOMISER } from "../modules/exomiser.nf"
 
 workflow SNV {
     take:
@@ -26,5 +26,5 @@ workflow SNV {
 
     GLNEXUS(family_deepvariant) 
     GLNEXUS2(GLNEXUS.out)
-    EXOMISER(params.exomiserTestConfig, GLNEXUS2.out.vcf, GLNEXUS2.out.fam)
+    EXOMISER(params.exomiserConfig, GLNEXUS2.out)
 }

@@ -5,11 +5,11 @@
 ---
 analysis:
     # hg19 or hg38 - ensure that the application has been configured to run the specified assembly otherwise it will halt.
-    #genomeAssembly: hg38
-    #vcf:
-    #ped:
-    proband: Proband 
-    hpoIds: ['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']
+    genomeAssembly: assembly 
+    vcf: input_vcf
+    ped: input_ped
+    proband: proband_id 
+    hpoIds: hpo_ids
     # These are the default settings, with values representing the maximum minor allele frequency in percent (%) permitted for an
     # allele to be considered as a causative candidate under that mode of inheritance.
     # If you just want to analyse a sample under a single inheritance mode, delete/comment-out the others. For AUTOSOMAL_RECESSIVE
@@ -136,7 +136,7 @@ outputOptions:
     # according to the outputFormats option. If unspecified this will default to the following: 
     # {exomiserDir}/results/input-vcf-name-exomiser-results.html
     # alternatively, specify a fully qualifed path only. e.g. /users/jules/exomes/analysis    
-    #outputPrefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/6_exomiser
+    outputPrefix: output_prefix 
     outputDirectory: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/results/
     #out-format options: HTML, JSON, TSV_GENE, TSV_VARIANT, VCF (default: HTML)
     outputFormats: [HTML, JSON, TSV_GENE, TSV_VARIANT, VCF]
