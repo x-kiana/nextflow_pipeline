@@ -6,6 +6,8 @@
  */
 
 process FASTQTOSAM{
+    beforeScript = 'source /project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/miniconda3/etc/profile.d/conda.sh'
+
     input:
     tuple path(x), path(y), val(sampleID), val(familyID)
 

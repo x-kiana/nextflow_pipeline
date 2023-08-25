@@ -5,5 +5,5 @@ dependencies:
 - picard
 - samtools
 - htslib
-prefix: /mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/scripts
+prefix: /scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/nextflow_pipeline/scripts
 

@@ -1,17 +1,11 @@
 #!/bin/sh
 
-#SBATCH --partition=defq
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=4G
-#SBATCH --mail-user=kiana.rashidi@bcchr.ca
-#SBATCH --mail-type=ALL
+#PBS -A st-sturvey-1 
+#PBS -l walltime=24:00:00,select=1:ncpus=2:mem=24gb
+#PBS -m abe
+#PBS -M kiana.rashidi@bcchr.ca
 
-#SBATCH --output=%x-%j.out
-#SBATCH --error=%x-%j.error
-
-source /home/BCRICWH.LAN/kiana.rashidi/miniconda3/etc/profile.d/conda.sh 
-module load singularity
-Nextflow=/mnt/common/Precision/NextFlow/June2023/nextflow
-$Nextflow run main.nf -profile gpcc -params-file params.yml -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
+source /project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/miniconda3/etc/profile.d/conda.sh
+Nextflow=/project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/nextflow/nextflow
+$Nextflow run main.nf -profile sockeye -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
 #add work (-w) for separate processes

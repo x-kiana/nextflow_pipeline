@@ -1,0 +1,4 @@
+#Family ID	Individual ID	Paternal ID	Maternal ID	Sex	Phenotype
+FAM	Proband	Father	Mother	1	2
+FAM	Mother	0	0	2	1
+FAM	Father	0	0	1	1

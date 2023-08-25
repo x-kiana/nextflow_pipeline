@@ -14,7 +14,7 @@ process DUPREMOVED {
 
     script:
     """
-    source ~/.bashrc
+    export JAVA_HOME=/project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/java/jdk-20.0.2/
     picard -Xmx64g MarkDuplicates \
 	R=${params.refgenome} \
 	I=$x \
