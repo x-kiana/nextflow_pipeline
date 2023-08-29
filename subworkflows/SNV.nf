@@ -7,7 +7,7 @@ include { INDEXEDBAM } from "../modules/indexed_bam.nf"
 include { DUPREMOVED } from "../modules/dupremoved.nf"
 include { DEEPVARIANT } from "../modules/deepvariant.nf"
 include { GLNEXUS } from "../modules/glnexus.nf"
-include { GLNEXUS2 } from "../modules/glnexus-2_test.nf"
+include { GLNEXUS2 } from "../modules/glnexus_vcf.nf"
 include { EXOMISER } from "../modules/exomiser.nf"
 
 workflow SNV {
