@@ -26,5 +26,5 @@ workflow SNV {
 
     GLNEXUS(family_deepvariant) 
     GLNEXUS2(GLNEXUS.out)
-    EXOMISER(params.exomiserConfig, GLNEXUS2.out)
+    EXOMISER(params.exomiserTestConfig, GLNEXUS2.out.fam)
 }

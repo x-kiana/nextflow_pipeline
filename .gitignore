@@ -6,4 +6,7 @@ report*
 work
 intermediate_results_dir
 results
-.nextflow
+.nextflow*
+java/
+miniconda3/
+nextflow/

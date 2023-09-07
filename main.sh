@@ -5,6 +5,7 @@
 #PBS -m abe
 #PBS -M kiana.rashidi@bcchr.ca
 
+sh create_ped.sh
 source /project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/miniconda3/etc/profile.d/conda.sh
 Nextflow=/project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/nextflow/nextflow
 $Nextflow run main.nf -profile sockeye -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png

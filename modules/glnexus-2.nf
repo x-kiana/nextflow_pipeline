@@ -12,6 +12,7 @@ process GLNEXUS2 {
 
     output:
     path "${familyID}.merged.vcf.gz"
+    val familyID, emit: fam
     
     script:
     """

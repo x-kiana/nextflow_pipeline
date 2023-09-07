@@ -1,0 +1,4 @@
+FamilyID	SampleID	PaternalID	MaternalID	Sex	Affected	"HPO terms (comma-sep list, 0 for NA)"	"Family Member (Proband, Mother, Father, Sibling)"	FastqR1	FastqR2
+6_full	Proband_6	Father_6	Mother_6	1	2	['HP:0001268', 'HP:0001250', 'HP:0000709', 'HP:0008207', 'HP:0002180', 'HP:0002500']	Proband	/scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/Case6/Case6_proband_R1.fastq.gz	/scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/Case6/Case6_proband_R2.fastq.gz	
+6_full	Mother_6	0	0	2	1	0	Mother	/scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/Case6/Case6_mother_R1.fastq.gz	/scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/Case6/Case6_mother_R2.fastq.gz	
+6_full	Father_6	0	0	1	1	0	Father	/scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/Case6/Case6_father_R1.fastq.gz	/scratch/st-sturvey-1/Sandbox/kiana_nextflow_pipeline/Case6/Case6_father_R2.fastq.gz
