@@ -20,7 +20,7 @@ process EXOMISER{
     sed -i 's|input_ped|${params.wd}/${familyID}.ped|g' $x
     sed -i 's|assembly|hg38|g' $x
     sed -i 's|input_vcf|${params.wd}/results/${familyID}.merged.vcf.gz|g' $x
-    sed -i 's|output_prefix|${params.wd}/results/${familyID}_|g' $x
+    sed -i 's|output_prefix|${params.wd}/results/${familyID}_exomiser|g' $x
     ${params.java} -Xmx4g -jar -Djava.io.tmpdir=$PWD ${params.exomiserDir}/${params.exomiser} \
         --analysis $x \
         --spring.config.location=${params.exomiserDir} 

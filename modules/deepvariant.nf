@@ -23,7 +23,7 @@ process DEEPVARIANT{
     """
     /opt/deepvariant/bin/run_deepvariant \
       --intermediate_results_dir="${params.wd}/intermediate_results_dir/${sampleID}" \
-    --model_type=WGS \
+    --model_type=WES \
     --ref="${params.refgenome}" \
     --reads="${params.wd}/results/${familyID}_${sampleID}.dupremoved.sorted.bam" \
     --output_gvcf="${familyID}_${sampleID}_DeepVariant.gvcf.gz" \

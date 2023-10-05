@@ -8,5 +8,5 @@
 sh create_ped.sh
 source /project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/miniconda3/etc/profile.d/conda.sh
 Nextflow=/project/st-sturvey-1/PrecisionHealthVirtualEnvironment/Workflows/nextflow_pipeline/nextflow/nextflow
-$Nextflow run main.nf -profile sockeye -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
+$Nextflow run main.nf -w $TMPDIR -offline true -profile sockeye -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
 #add work (-w) for separate processes

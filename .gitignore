@@ -3,10 +3,17 @@
 trace*
 timeline*
 report*
+*.sh.*
 work
 intermediate_results_dir
 results
 .nextflow*
 java/
 miniconda3/
+conda_pkgs/
 nextflow/
+*.tsv
+*.ped
+spring.log
+main_pbs_*
+nextflow-*-all
