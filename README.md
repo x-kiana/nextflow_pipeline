@@ -8,6 +8,7 @@ The process flow consists of the following:
 * Reading data from spreadsheet
   * Prior to any processes being called, each row of the provided sample sheet is read into a tuple (an example sample sheet has been provided)
   * This avoids the need to reset params every time you want to process an individual with a different ID and file path.
+  * Additionally, the initial CREATE_PED module creates each family's .ped files using the spreadsheet
 * Mapping and converting
   * map raw data to create the .sam files for each individual in the sample sheet
   * convert the .sam files to binary (.bam), sort (.sorted.bam), and index (.sorted.bam.bai)
@@ -48,9 +49,9 @@ To run the pipeline using the test files, follow the following steps:
 | 6        | Mother                                           | 6_Mother  | 0          | 0          | 2                                 | 1                                   | path/to/r1.fastq | path/to/r2.fastq | 0                          |
 | 6        | Father                                           | 6_Father  | 0          | 0          | 1                                 | 1                                   | path/to/r1.fastq | path/to/r2.fast1 | 0                          |
 ## Notes
-* If you are using a different job scheduler than slurm, you would need to create a separate profile for it in the profiles section. You can find more info on this in the nextflow documentation.
+* If you are using a different job scheduler than slurm, you would need to create a separate profile for it in the profiles section. You can find more info on this in the nextflow documentation, or by looking at the config file in this repo.
 * To run the pipeline on full genome data, remove the --regions tag in the modules/deepvariant.nf script. This will be determined using a conditional in later versions, but editing is necessary for current version (0.0.2)
 * Various scripts in this repo are not included in the current release of the pipeline, as they are still under development and have not been tested. These scripts in addition to ones from older versions can currently be found in the misc folder.
-* Currently, nextflow doesn't seem to be able to update params when specified through both the params section and inside a profile. Therefore, a params.yml file has been created for ease of switching to the test paths. An example of how this is used is included in the main.sh nextflow call. However, this is no longer necessary when reading paths from a spreadsheet, and has only been provided as an example.
+* Currently, nextflow doesn't seem to be able to update params when specified through both the params section and inside a profile. Originally, a params.yml file had been created for ease of switching to the test paths. However, this is no longer necessary when reading paths from a spreadsheet.
 ## Future Plans
-In future versions, the pipeline is going to include an install.sh script (currently being developed) that will help you install all the tools necessary. Additionally, more variant calling and annotating tools will be included. Additional profiles will be added to the pipeline to make it possible to use the pipeline through other schedulers.
+In future versions, the pipeline is going to include an install.sh script (currently being developed) that will help you install all the tools necessary. Additionally, more variant calling and annotating tools will be included.
