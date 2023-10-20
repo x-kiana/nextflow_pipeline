@@ -7,3 +7,8 @@ work
 intermediate_results_dir
 results
 .nextflow*
+spring.log
+conda_pkgs/
+nextflow-23.04.3-all
+*.tsv
+main_pbs_dh*
