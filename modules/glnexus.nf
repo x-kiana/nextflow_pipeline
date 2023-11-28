@@ -17,11 +17,11 @@ process GLNEXUS {
     
     script:
     """
-#can add WGS/WES/unfiltered - fine for now
-    /mnt/common/Precision/GLNexus/glnexus_cli -c DeepVariant_unfiltered \
+    glnexus_cli -c DeepVariant_unfiltered \
         --threads ${task.cpus} \
         $x \
-        > ${familyID}.glnexus.merged.bcf
+    > ${familyID}.glnexus.merged.bcf
     """
 }
+
 

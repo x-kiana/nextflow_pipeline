@@ -13,3 +13,4 @@ export NXF_OFFLINE='TRUE'
 Nextflow=/scratch/st-sturvey-1/Sandbox/nextflow_pipeline/nextflow-23.04.3-all
 $Nextflow run main.nf -profile sockeye -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png -work-dir /scratch/st-sturvey-3/kiana_test --sample_sheet Case6Test.tsv --seq_type WGS
 #add work (-w) for separate processes
+

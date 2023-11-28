@@ -1,4 +1,0 @@
-FamilyID	SampleID	FastqR1	FastqR2
-6	Proband	/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6_proband_R1.fastq.gz	/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6_proband_R2.fastq.gz	
-6	Mother	/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6_mother_R1.fastq.gz	/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6_mother_R2.fastq.gz	
-6	Father	/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6_father_R1.fastq.gz	/mnt/scratch/Public/TRAINING/GenomeAnalysisModule/CaseInformation/CaseFiles/Case6/Case6_father_R2.fastq.gz	
