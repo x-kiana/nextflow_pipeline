@@ -12,6 +12,6 @@ workflow {
                   | map { row -> tuple(file(row.FastqR1), file(row.FastqR2), row.SampleID, row.FamilyID) } 
     
     SV(sample_matrix)
-    SNV(sample_matrix)
+    SNV(sample_matrix, CREATE_PED.out.family_ped)
 }
 

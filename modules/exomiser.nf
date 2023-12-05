@@ -9,6 +9,7 @@ process EXOMISER{
     input:
     path x
     val familyID
+    path familyPed
     
     script:
     """
@@ -17,7 +18,7 @@ process EXOMISER{
 
     sed -i "s|hpo_ids|\${HPO}|g" $x
     sed -i "s|proband_id|\${PROBAND}|g" $x
-    sed -i 's|input_ped|${params.wd}/${familyID}.ped|g' $x
+    sed -i 's|input_ped|${familyPed}|g' $x
     sed -i 's|assembly|hg38|g' $x
     sed -i 's|input_vcf|${params.wd}/results/${familyID}.merged.vcf.gz|g' $x
     sed -i 's|output_prefix|${params.wd}/results/${familyID}_exomiser|g' $x

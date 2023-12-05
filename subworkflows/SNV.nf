@@ -13,6 +13,7 @@ include { EXOMISER } from "../modules/exomiser.nf"
 workflow SNV {
     take:
     sample_matrix
+    family_ped
 
     main:
     FASTQTOSAM(sample_matrix)
@@ -26,5 +27,5 @@ workflow SNV {
 
     GLNEXUS(family_deepvariant) 
     GLNEXUS2(GLNEXUS.out)
-    EXOMISER(params.exomiserTestConfig, GLNEXUS2.out.fam)
+    EXOMISER(params.exomiserTestConfig, GLNEXUS2.out.fam, family_ped)
 }

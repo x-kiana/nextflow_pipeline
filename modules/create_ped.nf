@@ -12,7 +12,7 @@ process CREATE_PED {
     
     output:
     path "PedSampleSheet.tsv"
-    path "*.ped"
+    path "*.ped", emit: family_ped
 
     script:
     """
