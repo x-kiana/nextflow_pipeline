@@ -10,7 +10,7 @@ process DUPREMOVED {
  
     output:
     tuple path("${familyID}_${sampleID}.dupremoved.sorted.bam"), val(sampleID), val(familyID), emit: dupremoved
-    path "${familyID}_${sampleID}.dupremoved.sorted.bam.bai"
+    tuple path("${familyID}_${sampleID}.dupremoved.sorted.bam.bai"), val(sampleID), val(familyID), emit: dupremoved_indexed
 
     script:
     """

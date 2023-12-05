@@ -10,8 +10,7 @@
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.error
 
-sh create_ped.sh
 module load singularity
 Nextflow=/mnt/common/Precision/NextFlow/June2023/nextflow
-$Nextflow run main.nf -profile gpcc --seq_type "WGS" --sample_sheet "Case6Updated.tsv" -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
+$Nextflow run main.nf -profile gpcc --seq_type "WGS" --sample_sheet "/mnt/common/Precision/NextFlow/kiana_nextflow_pipeline/nextflow_pipeline/Case6Updated.tsv" -resume -with-report -with-trace -with-timeline -with-dag pipeline_flowchart.png
 #add work (-w) for separate processes
