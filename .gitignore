@@ -12,3 +12,6 @@ conda_pkgs/
 nextflow-23.04.3-all
 *.tsv
 main_pbs_dh*
+*.sif
+main_singularity.sh
+main_DH*

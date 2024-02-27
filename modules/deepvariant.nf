@@ -29,7 +29,6 @@ process DEEPVARIANT{
     --output_gvcf="${familyID}_${sampleID}_DeepVariant.gvcf.gz" \
     --output_vcf="${familyID}_${sampleID}_DeepVariant.vcf.gz" \
     --num_shards="${task.cpus}" \
-    --regions "${params.region}" \
     --sample_name="${sampleID}"
     """
 }
