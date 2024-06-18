@@ -13,8 +13,8 @@ process EXOMISER{
     
     script:
     """
-    PROBAND="\$(awk 'NR==2' ${params.wd}/${familyID}.ped | cut -f2)"
-    HPO="\$(awk 'NR==2' ${params.wd}/${familyID}.ped | cut -f7)"
+    PROBAND="\$(awk 'NR==2' ${familyPed} | cut -f2)"
+    HPO="\$(awk 'NR==2' ${familyPed} | cut -f7)"
 
     sed -i "s|hpo_ids|\${HPO}|g" $x
     sed -i "s|proband_id|\${PROBAND}|g" $x
